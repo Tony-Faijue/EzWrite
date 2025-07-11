@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -26,3 +27,5 @@ Route::middleware('auth')->group(function () {
 // Route::get('/user/home', function () {
 //     return view('user.homepage');
 // })->name('user.homepage');
+
+Route::get('/blogs', [BlogController::class, 'index'])->name('blogs-index');
