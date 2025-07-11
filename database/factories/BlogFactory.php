@@ -17,10 +17,10 @@ class BlogFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => 4,
-            'name' => fake()->title,
+            'user_id' => 1,
+            'name' => fake()->country(),
             'author' => fake()->name,
-            'hero_title' => fake()->realText(25),
+            'hero_title' => fake()->realText(50),
             //add the rest nullable fields
         ];
     }
