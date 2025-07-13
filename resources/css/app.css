@@ -37,3 +37,9 @@
 .auth-btn{
     @apply w-45 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg shadow-md transition-all duration-200;
 }
+.input-blog-form{
+    @apply text-lg rounded-sm border border-purple-400;
+}
+.input-blog-form-focus{
+    @apply focus:outline-teal-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition;
+}

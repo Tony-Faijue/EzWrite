@@ -1,4 +1,6 @@
 <div>
     {{ $slot }}
-    <a {{ $attributes }} class="btn">View Blog</a>
+    <div class="text-right mt-4">
+        <a {{ $attributes }}>View Blog</a>
+    </div>
 </div>
