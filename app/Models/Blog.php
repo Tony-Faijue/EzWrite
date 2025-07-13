@@ -16,10 +16,18 @@ class Blog extends Model
     ];
     protected $fillable = [
         'user_id',
-        'name',
         'author',
-        'hero_title'
+        'hero_title',
+        'intro',
+        'hero_topics',
+        'hero_authors',
+        'hero_image',
+        'footer_about'
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     public function sections()
     {
         return $this->hasMany(BlogSection::class)

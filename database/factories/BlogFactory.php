@@ -16,12 +16,23 @@ class BlogFactory extends Factory
      */
     public function definition(): array
     {
+        //Generate Authors in an array
+        $authors = array_map(
+            fn() => fake()->name,
+            range(1, rand(1, 3))
+        );
+
+        $imageURL = 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dXJsfGVufDB8fDB8fHww';
+
         return [
             'user_id' => 1,
-            'name' => fake()->country(),
             'author' => fake()->name,
             'hero_title' => fake()->realText(50),
-            //add the rest nullable fields
+            'intro' => fake()->realText(250),
+            'hero_topics' => fake()->words(3),
+            'hero_authors' => $authors,
+            'hero_image' => $imageURL,
+            'footer_about' => fake()->realText(100),
         ];
     }
 }

@@ -13,9 +13,9 @@ return new class extends Migration {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->string('name');
             $table->string(column: 'author');
             $table->string('hero_title');
+            $table->string('intro');
             $table->json('hero_topics')->nullable();
             $table->json('hero_authors')->nullable();
             $table->string('hero_image')->nullable();
@@ -27,7 +27,7 @@ return new class extends Migration {
             $table->id();
             $table->foreignId('blog_id')->constrained()->cascadeOnDelete();
             $table->string('heading');
-            $table->text('content');
+            $table->longtext('content');
             $table->json('images')->nullable();
             $table->integer('position')->default(0);
             $table->timestamps();
