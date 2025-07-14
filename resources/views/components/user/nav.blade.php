@@ -15,8 +15,9 @@
                 </button>
             </div>
             <div class="lg:flex flex-col lg:flex-row lg:space-x-4 lg:mt-0 mt-4 flex items-center text-xl">
+                <a href="{{route('user-home')  }}" class="text-white px-4 py-2 hover:text-purple-600">My Dashboard</a>
                 <a href="{{route('home')  }}" class="text-white px-4 py-2 hover:text-purple-600">Home</a>
-                <a href="#" class="text-white px-4 py-2 hover:text-purple-600">Blogs</a>
+                <a href="{{ route('blogs-index') }}" class="text-white px-4 py-2 hover:text-purple-600">Blogs</a>
                 <a href="#" class="text-white px-4 py-2 hover:text-purple-600">About</a>
                 <a href="#" class="text-white px-4 py-2 hover:text-purple-600">Contact</a>
                 <form id="logout-form" action="{{route('logout')}}" method="POST">

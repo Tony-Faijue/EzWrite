@@ -26,7 +26,6 @@ class BlogFactory extends Factory
 
         return [
             'user_id' => 1,
-            'author' => fake()->name,
             'hero_title' => fake()->realText(50),
             'intro' => fake()->realText(250),
             'hero_topics' => fake()->words(3),

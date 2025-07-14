@@ -15,8 +15,6 @@ class Blog extends Model
         'hero_authors' => 'array',
     ];
     protected $fillable = [
-        'user_id',
-        'author',
         'hero_title',
         'intro',
         'hero_topics',
@@ -35,7 +33,7 @@ class Blog extends Model
     }
     public function related()
     {
-        return $this->$this->belongsToMany(
+        return $this->belongsToMany(
             Blog::class,
             'blog_related',
             'blog_id',
