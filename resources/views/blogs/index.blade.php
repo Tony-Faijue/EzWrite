@@ -1,8 +1,6 @@
 @extends('layouts.layout')
 
-@section('header')
-    <x-nav />
-@endsection
+
 
 @section('content')
     <div class="bg-grad-2 flex">
@@ -14,7 +12,8 @@
                             <x-card.blog-cards>
 
                                 <h1 class="text-center text-2xl">{{$blog->hero_title}}</h1>
-                                <p class="text-center mt-2 mb-2">written by <i>{{ $blog->author }}</i></p>
+                                <p class="text-center mt-2 mb-2">written by <i>{{ $blog->user->firstname }}
+                                        {{ $blog->user->lastname }}</i></p>
                                 <!-- Topics -->
                                 <div class="">
                                     <ul class="flex flex-row flex-nowrap overflow-x-auto gap-4 mt-2 mb-2">

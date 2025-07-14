@@ -31,7 +31,7 @@ class AuthController extends Controller
 
         //Log in new user and redirect
         Auth::login($user);
-        return redirect()->intended('user.homepage');
+        return redirect()->route('user-home');
     }
     public function showLogin()
     {
@@ -47,7 +47,7 @@ class AuthController extends Controller
         //Try Authentication 
         if (Auth::attempt($credentials, $request->filled('remember'))) {
             $request->session()->regenerate();
-            return redirect()->intended('user.homepage');
+            return redirect()->route('user-home');
         }
         //Failed Authentication return back with error
         return back()->withErrors([

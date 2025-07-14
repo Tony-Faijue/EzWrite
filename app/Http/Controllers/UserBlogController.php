@@ -30,16 +30,28 @@ class UserBlogController extends Controller
         //Validation on the request
         //* is wildcard for arrays validate individual items in the array
         $validated = $request->validate([
-            'hero_title' => 'required|string|255',
-            'intro' => 'required|string|500',
+            'hero_title' => 'required|string|max:255',
+            'intro' => 'required|string|max:500',
             'hero_topics' => 'nullable|array|max:10',
-            'hero_topics.*' => 'required|string|max:255',
+            'hero_topics.*' => 'nullable|string|max:255',
             'hero_authors' => 'nullable|array|max:5',
-            'hero_authors.*' => 'required|string|max:255',
+            'hero_authors.*' => 'nullable|string|max:255',
             'hero_image' => 'nullable|string',
-            'footer_about' => 'nullable|string',
+            'footer_about' => 'nullable|string|max:500',
         ]);
+
+        // Drop blank/whitespace entries of authors and topics
+        // Re index them 
+        $cleanAuthors = array_filter($validated['hero_authors'] ?? [], fn($author) => trim($author) !== '');
+        $validated['hero_authors'] = array_values($cleanAuthors);
+
+        $cleanTopics = array_filter($validated['hero_topics'] ?? [], fn($topic) => trim($topic) !== '');
+        $validated['hero_topics'] = array_values($cleanTopics);
+
+
+
         //$request->user() returns the currently authenticated user
+        //automatically assign user_id of the blog
         $request->user()->blogs()->create($validated);
         return redirect()->route('blogs-index');
 

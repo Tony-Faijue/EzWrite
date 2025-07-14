@@ -22,7 +22,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/user/home', fn() => view('user.homepage'));
+    Route::get('/user/home', fn() => view('user.homepage'))->name('user-home');
     //Group User Blog CRUD Operations Routes
     Route::prefix('/user/blogs')->group(function () {
         Route::get('', [UserBlogController::class, 'index'])->name('user-blogs-index');

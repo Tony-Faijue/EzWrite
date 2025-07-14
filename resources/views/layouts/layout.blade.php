@@ -14,7 +14,14 @@
 </head>
 
 <body>
-    @yield('header')
+    <header>
+        @guest
+            @include('components.nav')
+        @else
+            @include('components.user.nav')
+        @endguest
+    </header>
+
     <main>
         @yield('content')
     </main>

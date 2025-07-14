@@ -1,8 +1,6 @@
 @extends('layouts.layout')
 
-@section('header')
-    <x-user.nav />
-@endsection
+
 
 @section('content')
     <div class="bg-grad-2 flex">
