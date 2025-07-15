@@ -3,55 +3,65 @@
 
 
 @section('content')
-    <div class="bg-grad-2 flex">
-        <div class="flex-1 flex justify-center items-center">
-            <ul>
-                @foreach ($blogs as $blog)
-                    <div class="user-form-bg my-4">
-                        <li>
-                            <x-card.blog-cards>
+    <div class="bg-grad-2 flex min-h-screen">
+        <div class="flex-1 flex flex-col">
 
-                                <h1 class="text-center text-2xl">{{$blog->hero_title}}</h1>
-                                <p class="text-center mt-2 mb-2">written by <i>{{ $blog->user->firstname }}
-                                        {{ $blog->user->lastname }}</i></p>
-                                <!-- Topics -->
-                                <div class="">
-                                    <ul class="flex flex-row flex-nowrap overflow-x-auto gap-4 mt-2 mb-2">
-                                        @forelse ($blog->hero_topics ?? [] as $topic)
-                                            <li class="bg-gray-300 rounded-2xl pl-2 pr-2">{{$topic}}</li>
+            <div class="flex-1 overflow-auto space-y-6 place-self-center mt-10">
+                <ul>
+                    @foreach ($blogs as $blog)
+                        <div class="user-form-bg my-4">
+                            <li>
+                                <x-card.blog-cards>
+
+                                    <h1 class="text-center text-2xl">{{$blog->hero_title}}</h1>
+                                    <p class="text-center mt-2 mb-2">written by <i>{{ $blog->user->firstname }}
+                                            {{ $blog->user->lastname }}</i></p>
+                                    <!-- Topics -->
+                                    <div class="">
+                                        <ul class="flex flex-row flex-nowrap overflow-x-auto gap-4 mt-2 mb-2">
+                                            @forelse ($blog->hero_topics ?? [] as $topic)
+                                                <li class="bg-gray-300 rounded-2xl pl-2 pr-2">{{$topic}}</li>
+                                            @empty
+                                                <li>No topics are listed</li>
+                                            @endforelse
+
+                                        </ul>
+                                    </div>
+                                    <!-- Hero Image -->
+                                    @empty($blog->hero_image)
+                                        <p>No Image Available</p>
+                                    @else
+                                        <img src="{{ $blog->hero_image }}" class="shadow-lg shadow-cyan-200 w-auto mt-2 mb-2">
+                                    @endempty
+                                    <!-- Authors -->
+                                    <ul class="flex flex-row flex-nowrap overflow-x-auto gap-2 mt-2 mb-2">
+                                        <p class="text-sm">Contributors:</p>
+                                        @forelse ($blog->hero_authors ?? [] as $author)
+                                            <li class="text-sm">{{$author}}</li>
                                         @empty
-                                            <li>No topics are listed</li>
+                                            <li>No other authors are listed</li>
                                         @endforelse
-
                                     </ul>
-                                </div>
-                                <!-- Hero Image -->
-                                @empty($blog->hero_image)
-                                    <p>No Image Available</p>
-                                @else
-                                    <img src="{{ $blog->hero_image }}" class="shadow-lg shadow-cyan-200 w-auto mt-2 mb-2">
-                                @endempty
-                                <!-- Authors -->
-                                <ul class="flex flex-row flex-nowrap overflow-x-auto gap-2 mt-2 mb-2">
-                                    <p class="text-sm">Contributors:</p>
-                                    @forelse ($blog->hero_authors ?? [] as $author)
-                                        <li class="text-sm">{{$author}}</li>
-                                    @empty
-                                        <li>No other authors are listed</li>
-                                    @endforelse
-                                </ul>
 
-                                <!-- Introduction -->
-                                <p class="mt-2 mb-2">{{ $blog->intro }}</p>
-                            </x-card.blog-cards>
-                        </li>
-                    </div>
-                @endforeach
-            </ul>
+                                    <!-- Introduction -->
+                                    <p class="mt-2 mb-2">{{ $blog->intro }}</p>
+                                </x-card.blog-cards>
+                            </li>
+                        </div>
+                    @endforeach
+                </ul>
+            </div>
+            <!-- Pagnation Links -->
+            <div>
+                <div class="flex justify-end mr-4 mb-4">
+                    {{ $blogs->links() }}
+                </div>
+            </div>
         </div>
-    </div>
+
+
 @endsection
 
-@section('footer')
-    <x-footer />
-@endsection
+    @section('footer')
+        <x-footer />
+    @endsection
