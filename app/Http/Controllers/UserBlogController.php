@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class UserBlogController extends Controller
@@ -11,7 +12,8 @@ class UserBlogController extends Controller
      */
     public function index()
     {
-        //
+        $blogs = auth()->user()->blogs()->orderBy("created_at", "desc")->paginate(10);
+        return view('user.blogs', ['blogs' => $blogs]);
     }
 
     /**
