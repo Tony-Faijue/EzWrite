@@ -63,3 +63,7 @@
     @apply flex justify-self-center min-w-auto bg-purple-500 hover:bg-purple-600 text-black font-semibold py-3 px-3 rounded-lg shadow-md transition-all duration-200;
 
 }
+.create-section-btn{
+    @apply w-45 flex justify-self-center bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-3 rounded-lg shadow-md transition-all duration-200;
+
+}

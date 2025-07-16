@@ -27,7 +27,7 @@ return new class extends Migration {
             $table->foreignId('blog_id')->constrained()->cascadeOnDelete();
             $table->string('heading');
             $table->longtext('content');
-            $table->json('images')->nullable();
+            $table->string('section_image')->nullable();
             $table->integer('position')->default(0);
             $table->timestamps();
         });
