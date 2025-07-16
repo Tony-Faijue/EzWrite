@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class SectionController extends Controller
@@ -9,9 +10,11 @@ class SectionController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Blog $blog)
     {
-        //
+        //how to pass a specific blog to help filter sections for a blog??
+        $sections = $blog->sections()->orderBy("id", "desc")->paginate(10);
+        return view('user.blogsections', ['sections' => $sections]);
     }
 
     /**
