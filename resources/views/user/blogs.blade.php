@@ -11,6 +11,7 @@
                 <ul>
                     @foreach ($blogs as $blog)
                         <div class="user-form-bg my-4">
+                            <button class="manage-sections-btn col-start-4">Manage Sections</button>
                             <li>
                                 <x-card.blog-cards>
 
@@ -46,6 +47,11 @@
 
                                     <!-- Introduction -->
                                     <p class="mt-2 mb-2">{{ $blog->intro }}</p>
+                                    <!-- Update Button -->
+                                    <div class="grid grid-cols-4">
+                                        <button class="update-blog-btn col-start-1 col-end-2">Update</button>
+                                        <button class="delete-blog-btn col-start-4">Delete</button>
+                                    </div>
                                 </x-card.blog-cards>
                             </li>
                         </div>

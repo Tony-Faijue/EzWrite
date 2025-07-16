@@ -14,9 +14,9 @@ class BlogSection extends Model
         'images' => 'array',
     ];
     protected $fillable = [
-        'blog_id',
         'heading',
         'content',
+        'images',
         'position'
     ];
 

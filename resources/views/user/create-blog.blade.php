@@ -113,7 +113,7 @@
                         <label for="footer_about" class="text-2xl">Footer</label>
                         <textarea id="footer_about" name="footer_about"
                             class="h-30 pl-4 pr-4 text-lg input-blog-form input-blog-form-focus"
-                            placeholder="Describe Yourself and Your Relationship with Topic"></textarea>
+                            placeholder="Describe Yourself and Your Relationship with Topic" required></textarea>
                         <div class="flex justify-center">
                             <button type="submit" class="submit-btn">Submit</button>
                         </div>

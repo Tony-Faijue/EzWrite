@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\SectionController;
 use App\Http\Controllers\UserBlogController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,11 @@ Route::middleware('auth')->group(function () {
         Route::get('/{id}/edit', [UserBlogController::class, 'edit'])->name('user-blogs-edit');
         Route::put('/{id}', [UserBlogController::class, 'update'])->name('user-blogs-update');
         Route::delete('/{id}', [UserBlogController::class, 'delete']);
+
+        //Nested Sections under each blog
+        Route::prefix('{blog}/sections')->group(function () {
+            Route::get('', [SectionController::class, 'index'])->name('sections-index');
+        });
     });
 });
 
