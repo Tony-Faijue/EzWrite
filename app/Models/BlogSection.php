@@ -10,20 +10,13 @@ class BlogSection extends Model
     /** @use HasFactory<\Database\Factories\BlogSectionFactory> */
     use HasFactory;
 
-    protected $casts = [
-        'images' => 'array',
-    ];
+
     protected $fillable = [
         'heading',
         'content',
-        'images',
+        'section_image',
         'position'
     ];
-
-    public function blog()
-    {
-        return $this->belongsTo(Blog::class);
-    }
 
     //Automatically Increment postion
     //Creation of a Model Event for BlogSection
@@ -40,4 +33,11 @@ class BlogSection extends Model
             }
         });
     }
+
+    public function blog()
+    {
+        return $this->belongsTo(Blog::class);
+    }
+
+
 }

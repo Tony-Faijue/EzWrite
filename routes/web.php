@@ -37,6 +37,8 @@ Route::middleware('auth')->group(function () {
         //Nested Sections under each blog
         Route::prefix('/{blog}/sections')->group(function () {
             Route::get('', [SectionController::class, 'index'])->name('sections-index');
+            Route::get('/create', [SectionController::class, 'create'])->name('sections-create');
+            Route::post('', [SectionController::class, 'store'])->name('sections-store');
         });
     });
 });

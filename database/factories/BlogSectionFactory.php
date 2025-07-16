@@ -16,10 +16,11 @@ class BlogSectionFactory extends Factory
      */
     public function definition(): array
     {
+        $imageURL = 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dXJsfGVufDB8fDB8fHww';
         return [
             'heading' => fake()->realText('50'),
             'content' => fake()->realText(500),
-            'position' => random_int(0, 5),
+            'section_image' => $imageURL
         ];
     }
 }
