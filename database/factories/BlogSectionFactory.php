@@ -17,7 +17,6 @@ class BlogSectionFactory extends Factory
     public function definition(): array
     {
         return [
-            'blog_id' => 1,
             'heading' => fake()->realText('50'),
             'content' => fake()->realText(500),
             'position' => random_int(0, 5),

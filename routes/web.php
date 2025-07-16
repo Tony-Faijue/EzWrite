@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('/{id}', [UserBlogController::class, 'delete']);
 
         //Nested Sections under each blog
-        Route::prefix('{blog}/sections')->group(function () {
+        Route::prefix('/{blog}/sections')->group(function () {
             Route::get('', [SectionController::class, 'index'])->name('sections-index');
         });
     });
