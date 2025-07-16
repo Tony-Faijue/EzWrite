@@ -15,7 +15,7 @@
         </a>
         <a href="#" class="flex items-center space-x-3 p-2 rounded hover:bg-teal-200">
             <i class="fas fa-user fa-la text-purple-600"></i>
-            <span>Create Sections For a Blog</span>
+            <span>My Sections For a Blog</span>
         </a>
         <a href="#" class="flex items-center space-x-3 p-2 rounded hover:bg-teal-200">
             <i class="fas fa-user fa-la text-purple-600"></i>
