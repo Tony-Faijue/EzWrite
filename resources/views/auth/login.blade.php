@@ -1,3 +1,4 @@
+<!-- Extends the main layout -->
 @extends('layouts.layout')
 
 @section('header')
@@ -5,6 +6,7 @@
 @endsection
 
 @section('content')
+    <!-- import of auth.loginform component -->
     <x-auth.loginform />
     @if($errors->any())
         <ul class="text-red-600">
@@ -15,6 +17,7 @@
     @endif
 
 @endsection
+
 @section('footer')
     <x-footer />
 @endsection

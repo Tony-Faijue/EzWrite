@@ -11,6 +11,7 @@ class BlogSection extends Model
     use HasFactory;
 
 
+    //Identify which attributes are mass-assignable
     protected $fillable = [
         'heading',
         'content',
@@ -18,22 +19,31 @@ class BlogSection extends Model
         'position'
     ];
 
-    //Automatically Increment postion
-    //Creation of a Model Event for BlogSection
+
+    //Creation of a Model LifeCycle Event for BlogSection
+    //booted() static eloquent hook called when model class in intialized
+    //Used to register event listeners
     /**
-     * Automatically updates the position for blogsection for a blog
+     * Automatically updates the position for a blog section for a blog
      * @return void
      */
     protected static function booted()
     {
+        //Use of the creating function for a model event
         static::creating(function ($section) {
+            //Check if position is already set
             if (is_null($section->position)) {
+                //Find the highest exisiting postion for a blog's section
                 $max = $section->blog->sections()->max('position') ?? 0;
+                //Assign the new section to max + 1
                 $section->position = $max + 1;
             }
         });
     }
-
+    /**
+     * Identify a relationship with a blog which blog sections belong to a blog
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo<Blog, BlogSection>
+     */
     public function blog()
     {
         return $this->belongsTo(Blog::class);

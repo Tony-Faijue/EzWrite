@@ -47,6 +47,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    /**
+     * Identify the relationship with blogs which a user has many blogs
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany<Blog, User>
+     */
     public function blogs()
     {
         return $this->hasMany(Blog::class);

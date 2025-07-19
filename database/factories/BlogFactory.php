@@ -17,6 +17,7 @@ class BlogFactory extends Factory
     public function definition(): array
     {
         //Generate Authors in an array
+        //Use of the array_map function to generate an array
         $authors = array_map(
             fn() => fake()->name,
             range(1, rand(1, 3))

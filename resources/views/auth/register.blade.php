@@ -1,3 +1,4 @@
+<!-- Extends the main layout -->
 @extends('layouts.layout')
 
 @section('header')
@@ -5,6 +6,7 @@
 @endsection
 
 @section('content')
+    <!-- import of auth.registerform component -->
     <x-auth.registerform />
     @if($errors->any())
         <ul class="text-red-600">
@@ -13,7 +15,6 @@
             @endforeach
         </ul>
     @endif
-
 @endsection
 
 @section('footer')

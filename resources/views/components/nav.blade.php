@@ -1,4 +1,5 @@
 <header>
+    <!-- Guest NavBar -->
     <nav class="bg-black p-4">
         <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center">
             <div class="text-white font-bold text-3xl mb-4 lg:mb-0 hover:text-purple-600 hover:cursor-pointer">
