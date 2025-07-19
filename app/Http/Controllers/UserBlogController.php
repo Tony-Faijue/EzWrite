@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class UserBlogController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the user blog resource.
      */
     public function index()
     {
@@ -17,7 +17,7 @@ class UserBlogController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new user blog resource.
      */
     public function create()
     {
@@ -25,12 +25,12 @@ class UserBlogController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created user blog resource in storage.
      */
     public function store(Request $request)
     {
-        //Validation on the request
-        //* is wildcard for arrays validate individual items in the array
+        //Validation on the request by applying requirements
+        //* is wildcard for arrays which validates individual items in the array
         $validated = $request->validate([
             'hero_title' => 'required|string|max:255',
             'intro' => 'required|string|max:500',
@@ -42,8 +42,13 @@ class UserBlogController extends Controller
             'footer_about' => 'nullable|string|max:500',
         ]);
 
-        // Drop blank/whitespace entries of authors and topics
-        // Re index them 
+        //Drop blank/whitespace entries of authors and topics
+        //Use of the array_fileter to method filter array items with the callback function
+        //Use of the null coalescing operator; $validated['hero_authors'] ?? [] ensures that array is used even if the field is null
+        //Use of PHP's short arrow function
+        //Check if the trimmed result is not an empty string
+        //array_filter keeps only items where the callback function returns true
+        //array_values reindexes the array numerically
         $cleanAuthors = array_filter($validated['hero_authors'] ?? [], fn($author) => trim($author) !== '');
         $validated['hero_authors'] = array_values($cleanAuthors);
 
@@ -52,15 +57,15 @@ class UserBlogController extends Controller
 
 
 
-        //$request->user() returns the currently authenticated user
-        //automatically assign user_id of the blog
+        //$request->user() returns the currently authenticated/logged-in user
+        //automatically assign user_id of the blog and redirect
         $request->user()->blogs()->create($validated);
         return redirect()->route('blogs-index');
 
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified user blog resource.
      */
     public function show(string $id)
     {

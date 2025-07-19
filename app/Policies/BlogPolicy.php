@@ -9,11 +9,11 @@ use Illuminate\Auth\Access\Response;
 class BlogPolicy
 {
     /**
-     * Determine whether the user can view any models.
+     * Determine whether the user can view any blog.
      */
     public function viewAny(User $user): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -29,7 +29,7 @@ class BlogPolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return true;
     }
 
     /**

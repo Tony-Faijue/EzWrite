@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\BlogSection;
 use Illuminate\Http\Request;
 
 class SectionController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the blog section resource.
      */
     public function index(Blog $blog)
     {
@@ -18,15 +19,17 @@ class SectionController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new blog section resource.
      */
     public function create(Blog $blog)
     {
+        //Use of the compact function to create an array of the parameters given
+        //pass the array to the view
         return view('user.create-section', compact('blog'));
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created blog section resource in storage.
      */
     public function store(Request $request, Blog $blog)
     {
@@ -41,11 +44,13 @@ class SectionController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified blog section resource.
      */
-    public function show(string $id)
+    public function show(Blog $blog, BlogSection $section)
     {
-        //
+        //Use of the compact function to create an array of the parameters given
+        //pass the array to the view
+        return view('user.section', compact('blog', 'section'));
     }
 
     /**

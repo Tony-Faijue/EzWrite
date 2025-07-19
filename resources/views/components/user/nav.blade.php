@@ -1,4 +1,5 @@
 <header>
+    <!-- User NavBar -->
     <nav class="bg-black p-4">
         <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center">
             <div class="text-white font-bold text-3xl mb-4 lg:mb-0 hover:text-purple-600 hover:cursor-pointer">
@@ -20,6 +21,7 @@
                 <a href="{{ route('blogs-index') }}" class="text-white px-4 py-2 hover:text-purple-600">Blogs</a>
                 <a href="#" class="text-white px-4 py-2 hover:text-purple-600">About</a>
                 <a href="#" class="text-white px-4 py-2 hover:text-purple-600">Contact</a>
+                <!-- Use of a form to handle logout function -->
                 <form id="logout-form" action="{{route('logout')}}" method="POST">
                     @csrf
                     <button type="submit" class="text-white px-4 py-2 hover:text-purple-600">

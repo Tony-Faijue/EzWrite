@@ -1,6 +1,9 @@
 <div class="bg-grad-1">
     <div class="user-form-bg">
         <h1 class="heading-form-title">Login</h1>
+        <!-- Form for user to login to -->
+        <!-- For Security when handling form submissions use POST method-->
+        <!-- The action calls the route that calls the login method-->
         <form id="loginForm" name="loginForm" method="POST" action="{{ route('login') }}" class="space-y-5">
             @csrf
             <div class="grid gap-4">
@@ -25,6 +28,7 @@
             <!--SignUp Redirect-->
             <div>
                 <p class="text-center text-sm text-gray-600 mt-2">
+                    <!-- Redirect to register route -->
                     Don't have an account? <a href="{{ route('register') }}"
                         class="text-blue-600 font-medium hover:underline">SignUp</a>
                 </p>

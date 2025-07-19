@@ -12,9 +12,11 @@
                 </ul>
             </div>
         @endif
-
+        <!-- import user side-nav component -->
         <x-user.side-nav />
         <div class="user-form-bg mx-auto mt-10 mb-10">
+            <!-- Form for user to create blog section -->
+            <!-- Pass the blog parameter to the section-store route  -->
             <form action="{{ route('sections-store', $blog) }}" method="POST">
                 @csrf
                 <div class="grid gap-4">

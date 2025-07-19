@@ -1,6 +1,8 @@
 <div class="bg-grad-1">
     <div class="user-form-bg">
         <h1 class="heading-form-title">Create an Account</h1>
+        <!-- Form for user to register -->
+        <!-- Action calls the register fucntion of the register route -->
         <form id="registerForm" name="registerForm" method="POST" action="{{ route('register') }}" class="space-y-5">
             @csrf
             <!--UserName-->
