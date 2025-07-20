@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-<!-- Use of @push to the value to the name stacked from layout view-->
+<!-- Use of push to the value to the name stacked from layout view-->
 <!-- Here this view links to js script file related to the form -->
 <!-- JS File to handle dynamic add and delete on the form parameters -->
 @push('scripts')
@@ -50,7 +50,7 @@
                         <p class="text-center text-lg">Can add up to 5 additional authors</p>
 
                         <div id="authors-wrapper">
-                            <!-- Use of @php directives to execute php code -->
+                            <!-- Use of php directives to execute php code -->
                             <!-- Use of the old function to retrieve old inputs if the form fails/error occurs  -->
                             <!-- No old input defaults to empty array which means one empty row -->
                             @php

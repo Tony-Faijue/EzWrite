@@ -21,9 +21,9 @@
                                     <div class="">
                                         <ul class="flex flex-row flex-nowrap overflow-x-auto gap-4 mt-2 mb-2">
                                             <!-- Use of null coalescing operator ??  
-                                                                To check if the array hero_topics exists and is not null use its value
-                                                                otherwise use an empty array-->
-                                            <!-- Use of @forelse directive with @empty -->
+                                                                        To check if the array hero_topics exists and is not null use its value
+                                                                        otherwise use an empty array-->
+                                            <!-- Use of forelse directive with empty -->
                                             @forelse ($blog->hero_topics ?? [] as $topic)
                                                 <li class="bg-gray-300 rounded-2xl pl-2 pr-2">{{$topic}}</li>
                                             @empty
@@ -45,6 +45,7 @@
                                             <li class="text-sm">{{$author}}</li>
                                         @empty
                                             <li>No other authors are listed</li>
+
                                         @endforelse
                                     </ul>
 
