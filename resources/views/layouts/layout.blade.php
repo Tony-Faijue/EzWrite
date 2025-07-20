@@ -15,7 +15,7 @@
 
 <body>
     <header>
-        <!-- Use of @guest Directive to display corresponding nav for user or guest -->
+        <!-- Use of guest Directive to display corresponding nav for user or guest -->
         @guest
             @include('components.nav')
         @else
@@ -24,7 +24,7 @@
     </header>
 
     <main>
-        <!-- Use of @yield directive to let child views to handle content display -->
+        <!-- Use of yield directive to let child views to handle content display -->
         @yield('content')
     </main>
     <!-- Letting Child Views Handle Footer: Should Handle it Here in the main layout -->
