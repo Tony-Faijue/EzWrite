@@ -87,7 +87,7 @@
                         </template>
                         <!-- Adds a new author row -->
                         <button type="button" id="add-author"
-                            class="px-3 py-1 bg-green-600 text-white rounded hover:bg-blue-700 disabled:opacity-50">Add
+                            class="px-3 py-1 bg-green-600 text-zinc-100 rounded hover:bg-blue-700 disabled:opacity-50">Add
                             Author</button>
 
                         <!-- Dynamic Topics -->
@@ -95,7 +95,7 @@
                         <label class="text-2xl text-center">Topics</label>
                         <p class="text-center text-lg">Can add up to 10 topics</p>
                         <div id="topics-wrapper">
-                            <!-- Use of @php directives to execute php code -->
+                            <!-- Use of php directives to execute php code -->
                             <!-- Use of the old function to retrieve old inputs if the form fails/error occurs  -->
                             <!-- No old input defaults to empty array which means one empty row -->
                             @php

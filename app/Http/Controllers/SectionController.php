@@ -50,6 +50,7 @@ class SectionController extends Controller
     {
         //Use of the compact function to create an array of the parameters given
         //pass the array to the view
+        //dd($section);
         return view('user.section', compact('blog', 'section'));
     }
 
