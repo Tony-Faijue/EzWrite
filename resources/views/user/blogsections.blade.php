@@ -27,7 +27,8 @@
                                     @empty($section->section_image)
                                         <p>No Image Available</p>
                                     @else
-                                        <img src="{{ $section->section_image }}" class="shadow-lg shadow-cyan-200 w-auto mt-2 mb-2">
+                                        <img src="{{ $section->section_image }}"
+                                            class="shadow-lg shadow-indigo-800 w-auto mt-2 mb-2">
                                     @endempty
 
                                     <!-- Content -->

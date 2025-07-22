@@ -41,9 +41,9 @@
             </div>
             <!--Login Redirect-->
             <div>
-                <p class="text-center text-sm text-gray-600 mt-2">
+                <p class="text-center text-sm text-sky-900 mt-2">
                     Already have an account? <a href="{{ route('login') }}"
-                        class="text-blue-600 font-medium hover:underline">Login</a>
+                        class="text-purple-600 font-medium hover:underline">Login</a>
                 </p>
             </div>
         </form>

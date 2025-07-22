@@ -27,10 +27,10 @@
             </div>
             <!--SignUp Redirect-->
             <div>
-                <p class="text-center text-sm text-gray-600 mt-2">
+                <p class="text-center text-sm text-sky-900 mt-2">
                     <!-- Redirect to register route -->
                     Don't have an account? <a href="{{ route('register') }}"
-                        class="text-blue-600 font-medium hover:underline">SignUp</a>
+                        class="text-purple-600 font-medium hover:underline">SignUp</a>
                 </p>
             </div>
         </form>
