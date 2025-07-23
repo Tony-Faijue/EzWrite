@@ -1,9 +1,6 @@
 <!-- Extends the main layout -->
 @extends('layouts.layout')
 
-@section('header')
-    <x-nav />
-@endsection
 
 @section('content')
     <!-- import of auth.loginform component -->
@@ -16,8 +13,4 @@
         </ul>
     @endif
 
-@endsection
-
-@section('footer')
-    <x-footer />
 @endsection

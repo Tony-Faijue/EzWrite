@@ -60,7 +60,3 @@
 
 
 @endsection
-
-    @section('footer')
-        <x-footer />
-    @endsection
