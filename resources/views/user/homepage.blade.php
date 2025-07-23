@@ -7,7 +7,3 @@
         <x-user.dashboard />
     </div>
 @endsection
-
-@section('footer')
-    <x-footer />
-@endsection

@@ -6,8 +6,8 @@
         <div class="flex-1 flex flex-col">
             <div
                 class="flex-1 overflow-auto space-y-6 place-self-center mt-10 mb-5
-                                                                                                                                                                                                                                                                                                                         border-8 border-gray-50 w-full mr-2
-                                                                                                                                                                                                                                                                                                                        full-bg-card">
+                                                                                                                                                                                                                                                                                                                             border-8 border-gray-50 w-full mr-2
+                                                                                                                                                                                                                                                                                                                            full-bg-card">
                 <h1 class="text-5xl text-center">{{ $section->heading }}
                 </h1>
                 <div class="flex flex-col justify-center gap-6">
@@ -17,8 +17,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('footer')
-    <x-footer />
 @endsection
