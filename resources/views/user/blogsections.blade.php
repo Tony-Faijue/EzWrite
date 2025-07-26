@@ -25,13 +25,14 @@
 
                                     <!-- Section Image -->
                                     @empty($section->section_image)
-                                        <p>No Image Available</p>
+                                        <p class="text-center text-red-600">No Image Available</p>
                                     @else
+                                        <!-- Call the image_src method to display stored image -->
                                         <img src="{{ $section->image_src }}" class="shadow-lg shadow-indigo-800 w-auto mt-2 mb-2">
                                     @endempty
 
                                     <!-- Content -->
-                                    <p class="mt-2 mb-2">{{ $section->content }}</p>
+                                    <p class="mt-2 mb-2 preserve-whitespace">{{ $section->content }}</p>
                                     <!-- Update Button -->
                                     <div class="grid grid-cols-4">
                                         <button class="update-blog-btn col-start-1 col-end-2">Update</button>

@@ -14,7 +14,7 @@
                         <img src="{{ Str::startsWith($section->section_image, ['http://', 'https://']) ? $section->section_image : asset('storage/' . $section->section_image) }}"
                             alt="Section Image" class="w-250 h-150 place-self-center rounded-2xl" />
                     @endif
-                    <p class="ml-10 mr-10 text-md lg:text-xl ">{{$section->content}}</p>
+                    <p class="ml-10 mr-10 text-md lg:text-xl preserve-whitespace">{{$section->content}}</p>
                 </div>
             </div>
         </div>

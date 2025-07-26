@@ -33,6 +33,9 @@
                             class="h-50 pl-4 pr-4 text-lg input-blog-form input-blog-form-focus"
                             placeholder="Enter your Blog Content Here" required></textarea>
                         <!-- Section Image -->
+                        <h2 class="text-lg">(Optional) Provide an image URL or image file. If both are provided the image
+                            file
+                            will be used.</h2>
                         <!-- Optional Url Image -->
                         <label for="section_image_url" class="text-2xl">Section Image URL</label>
                         <input type="url" id="section_image_url" name="section_image_url"

@@ -70,3 +70,6 @@
     @apply w-45 flex justify-self-center bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-3 rounded-lg shadow-md transition-all duration-200;
 
 }
+.preserve-whitespace{
+    white-space: pre-wrap;
+}
