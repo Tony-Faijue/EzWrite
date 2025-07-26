@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\BlogSection;
 use Illuminate\Http\Request;
+use Storage;
 
 class SectionController extends Controller
 {
@@ -33,13 +34,36 @@ class SectionController extends Controller
      */
     public function store(Request $request, Blog $blog)
     {
+        //Create 2 fields file and url for image to be validates
         $validated = $request->validate([
             'heading' => 'required|string|max:500',
             'content' => 'required|string|max:2500',
-            'section_image' => 'nullable|string',
+            'section_image_file' => 'nullable|image|max:8192',
+            'section_image_url' => 'nullable|url|max:8192',
         ]);
 
-        $blog->sections()->create($validated);
+        //file path or url will be assigned to this value or remain null
+        $pathOrUrl = null;
+
+        //If image is uploaded store the image first
+        if ($request->hasFile('section_image_file')) {
+            //sections folder under storage/app/public
+            //public is the disk name
+            $pathOrUrl = $request->file('section_image_file')->store('sections', 'public');
+        }
+        //Otherwise, use the url if provided
+        elseif (!empty($validated['section_image_url'])) {
+            $pathOrUrl = $validated['section_image_url'];
+        }
+
+        //Merge the chosen path/URL back into the data array
+        $data = [
+            'heading' => $validated['heading'],
+            'content' => $validated['content'],
+            'section_image' => $pathOrUrl,  //null, path, or external url
+        ];
+
+        $blog->sections()->create($data);
         return redirect()->route('sections-index', $blog)->with('success', 'Section Created!');
     }
 

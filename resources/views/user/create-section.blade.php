@@ -17,7 +17,7 @@
         <div class="user-form-bg mx-auto mt-10 mb-10">
             <!-- Form for user to create blog section -->
             <!-- Pass the blog parameter to the section-store route  -->
-            <form action="{{ route('sections-store', $blog) }}" method="POST">
+            <form action="{{ route('sections-store', $blog) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="grid gap-4">
                     <div class="grid grid-cols-1 gap-4">
@@ -33,9 +33,15 @@
                             class="h-50 pl-4 pr-4 text-lg input-blog-form input-blog-form-focus"
                             placeholder="Enter your Blog Content Here" required></textarea>
                         <!-- Section Image -->
-                        <label for="section_image" class="text-2xl">Section Image</label>
-                        <input type="text" id="section_image" name="section_image"
-                            class="h-10 pl-4 pr-4 input-blog-form input-blog-form-focus" placeholder="Image URL" />
+                        <!-- Optional Url Image -->
+                        <label for="section_image_url" class="text-2xl">Section Image URL</label>
+                        <input type="url" id="section_image_url" name="section_image_url"
+                            class="h-10 pl-4 pr-4 input-blog-form input-blog-form-focus"
+                            placeholder="https://example.com/image.jpg" />
+                        <!-- Optional File Image -->
+                        <label for="section_image_file" class="text-2xl">Section Image File</label>
+                        <input type="file" id="section_image_file" name="section_image_file"
+                            class="h-10 pl-4 pr-4 input-blog-form input-blog-form-focus" accept="image/*" />
                         <div class="flex justify-center">
                             <button type="submit" class="submit-btn">Submit</button>
                         </div>

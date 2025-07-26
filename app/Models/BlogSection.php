@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Container\Attributes\Storage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -47,6 +48,17 @@ class BlogSection extends Model
     public function blog()
     {
         return $this->belongsTo(Blog::class);
+    }
+
+    public function getImageSrcAttribute(): ?string
+    {
+        if (!$this->section_image) {
+            return null;
+        }
+        if (filter_var($this->section_image, FILTER_VALIDATE_URL)) {
+            return $this->section_image;
+        }
+        return \Illuminate\Support\Facades\Storage::disk('public')->url($this->section_image);
     }
 
 
