@@ -24,7 +24,7 @@ class SectionController extends Controller
      */
     public function create(Blog $blog)
     {
-        //Use of the compact function to create an array of the parameters given
+        //Use of the compact function to create an array of the parameters given for the blog
         //pass the array to the view
         return view('user.create-section', compact('blog'));
     }
@@ -34,7 +34,7 @@ class SectionController extends Controller
      */
     public function store(Request $request, Blog $blog)
     {
-        //Create 2 fields file and url for image to be validates
+        //Create 2 fields file and url for image to be validated
         $validated = $request->validate([
             'heading' => 'required|string|max:500',
             'content' => 'required|string|max:2500',
@@ -79,19 +79,53 @@ class SectionController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified blog section.
      */
-    public function edit(string $id)
+    public function edit(Blog $blog, BlogSection $section)
     {
-        //
+        //Use of the compact function to create an array of the parameters given for the blog
+        //pass the array to the view
+        return view('user.update-section', compact('blog', 'section'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Blog $blog, BlogSection $section)
     {
-        //
+        //dd($request->all(), $request->files->all());
+        //Validate the inputs
+        $validated = $request->validate([
+            'heading' => 'required|string|max:500',
+            'content' => 'required|string|max:2500',
+            'section_image_url' => 'nullable|url|max:8192',
+            'section_image_file' => 'nullable|image|max:8192',
+        ]);
+        //Set default image value to already stored image
+        $pathOrUrl = $section->section_image;
+
+        if ($request->hasFile('section_image_file')) {
+            //Delete old file from storage if was uploaded locally
+            if ($section->section_image && !str_starts_with($section->section_image, 'http')) {
+                //Go to disk in public storage folder and delete corresponding image
+                Storage::disk('public')->delete($section->section_image);
+            }
+            //Store the image file in the public folder on the disk
+            $pathOrUrl = $request->file('section_image_file')->store('sections', 'public');
+        }
+        //Otherwise, use the url if provided
+        elseif (!empty($validated['section_image_url'])) {
+            $pathOrUrl = $validated['section_image_url'];
+        }
+
+        //Update the section
+        $section->update([
+            'heading' => $validated['heading'],
+            'content' => $validated['content'],
+            'section_image' => $pathOrUrl //can still be null, path or url
+        ]);
+
+        return redirect()->route('sections-index', $blog)->with('Success', 'Section updated successfully!');
     }
 
     /**
