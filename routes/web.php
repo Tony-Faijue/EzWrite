@@ -49,6 +49,8 @@ Route::middleware('auth')->group(function () {
             Route::get('/create', [SectionController::class, 'create'])->name('sections-create');
             Route::post('', [SectionController::class, 'store'])->name('sections-store');
             Route::get('/{section}', [SectionController::class, 'show'])->name('sections-show');
+            Route::get('/{section}/edit', [SectionController::class, 'edit'])->name('sections-edit');
+            Route::put('/{section}', [SectionController::class, 'update'])->name('sections-update');
         });
     });
 });

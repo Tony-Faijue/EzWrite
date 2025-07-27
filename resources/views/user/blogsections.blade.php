@@ -35,7 +35,8 @@
                                     <p class="mt-2 mb-2 preserve-whitespace">{{ $section->content }}</p>
                                     <!-- Update Button -->
                                     <div class="grid grid-cols-4">
-                                        <button class="update-blog-btn col-start-1 col-end-2">Update</button>
+                                        <a href="{{ route('sections-edit', [$blog, $section]) }}"><button
+                                                class="update-blog-btn col-start-1 col-end-2">Update</button></a>
                                         <button class="delete-blog-btn col-start-4">Delete</button>
                                     </div>
                                     <div class="text-right mt-4">
