@@ -11,6 +11,8 @@ class UserTest extends TestCase
      */
     public function test_example(): void
     {
-        $this->assertTrue(true);
+        $string1 = "Hello World";
+        $string2 = "Hello World";
+        $this->assertEquals($string1, $string2, 'Determine if two strings are equal');
     }
 }
