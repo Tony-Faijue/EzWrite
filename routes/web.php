@@ -51,6 +51,8 @@ Route::middleware('auth')->group(function () {
             Route::get('/{section}', [SectionController::class, 'show'])->name('sections-show');
             Route::get('/{section}/edit', [SectionController::class, 'edit'])->name('sections-edit');
             Route::put('/{section}', [SectionController::class, 'update'])->name('sections-update');
+            Route::get('/{section}/confirm-delete', [SectionController::class, 'confirmDelete'])->name('sections-confirm-delete');
+            Route::delete('/{section}', [SectionController::class, 'destroy'])->name('sections-delete');
         });
     });
 });

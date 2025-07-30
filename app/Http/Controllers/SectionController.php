@@ -64,7 +64,7 @@ class SectionController extends Controller
         ];
 
         $blog->sections()->create($data);
-        return redirect()->route('sections-index', $blog)->with('success', 'Section Created!');
+        return redirect()->route('sections-index', $blog)->with('Success', 'Section Created!');
     }
 
     /**
@@ -125,14 +125,29 @@ class SectionController extends Controller
             'section_image' => $pathOrUrl //can still be null, path or url
         ]);
 
-        return redirect()->route('sections-index', $blog)->with('Success', 'Section updated successfully!');
+        return redirect()->route('sections-index', $blog)->with('Success', 'Section Updated Successfully!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Blog $blog, BlogSection $section)
     {
-        //
+        //delete the section
+        $section->delete();
+        //redirect
+        return redirect()->route('sections-index', $blog)->with('Success', 'Section Deleted Successfully');
     }
+
+    /**
+     * Return the delete section confirmation page
+     * @param \App\Models\Blog $blog
+     * @param \App\Models\BlogSection $section
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function confirmDelete(Blog $blog, BlogSection $section)
+    {
+        return view('user.delete-section-confirm', compact('blog', 'section'));
+    }
+
 }
