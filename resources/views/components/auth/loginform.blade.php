@@ -30,8 +30,18 @@
                 <p class="text-center text-sm text-sky-900 mt-2">
                     <!-- Redirect to register route -->
                     Don't have an account? <a href="{{ route('register') }}"
-                        class="text-purple-600 font-medium hover:underline">SignUp</a>
+                        class="text-purple-600 font-medium hover:underline">Signup</a>
                 </p>
+            </div>
+            <div class="text-center">
+                <!-- Display Error -->
+                @if($errors->any())
+                    <ul class="text-red-600 text-md">
+                        @foreach($errors->all() as $err)
+                            <li>{{ $err }}</li>
+                        @endforeach
+                    </ul>
+                @endif
             </div>
         </form>
     </div>
