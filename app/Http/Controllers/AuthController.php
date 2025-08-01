@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Auth;
+use Exception;
 use Hash;
 use Illuminate\Http\Request;
+use Log;
 
 class AuthController extends Controller
 {
@@ -36,12 +38,20 @@ class AuthController extends Controller
 
         //Hash the password
         $data['password'] = Hash::make($data['password']);
+
         //Create new User
-        $user = User::create($data);
+        try {
+            $user = User::create($data);
+        } catch (Exception $e) {
+            Log::error('Registration failed: ' . $e->getMessage());
+            return redirect()->route('register')
+                ->withErrors(['registration' => 'Registration failed, please try again.'])
+                ->withInput();
+        }
 
         //Log in new user and redirect them
         Auth::login($user);
-        return redirect()->route('user-home');
+        return redirect()->route('user-home')->with('Success', "Welcome aboard!");
     }
     /**
      * Returns the view to Login Form
@@ -75,7 +85,7 @@ class AuthController extends Controller
         }
         //Failed Authentication return back with error
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'login' => 'The provided credentials do not match our records.',
         ]);
     }
     /**

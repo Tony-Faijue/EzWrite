@@ -17,16 +17,18 @@ Route::get('/home', function () {
 })->name('home');
 
 //----------Login, Register and Logout Routes----------------
-Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
-Route::post('/register', [AuthController::class, 'register']);
+Route::middleware('guest')->group(function () {
+    Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+    Route::post('/register', [AuthController::class, 'register']);
 
-Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
-
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
+});
 
 //----------Middleware to handle routes for an authenticated user----------------
 Route::middleware('auth')->group(function () {
+    //----------User Logout--------------------
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     //----------User Home Route----------------
     Route::get('/user/home', fn() => view('user.homepage'))->name('user-home');
     //----------User Blog Routes----------------

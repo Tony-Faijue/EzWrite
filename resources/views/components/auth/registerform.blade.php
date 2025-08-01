@@ -13,14 +13,14 @@
             </div>
             <!--FirstName-->
             <div>
-                <label for="firstname" class="block label-form mb-1">FirstName</label>
-                <input type="text" id="firstname" name="firstname" placeholder="FirstName" required
+                <label for="firstname" class="block label-form mb-1">Firstname</label>
+                <input type="text" id="firstname" name="firstname" placeholder="Firstname" required
                     class="input-form input-form-focus" />
             </div>
             <!--LastName-->
             <div>
-                <label for="lastname" class="block label-form mb-1">LastName</label>
-                <input type="text" id="lastname" name="lastname" placeholder="LastName" required
+                <label for="lastname" class="block label-form mb-1">Lastname</label>
+                <input type="text" id="lastname" name="lastname" placeholder="Lastname" required
                     class="input-form input-form-focus" />
             </div>
             <!--Email-->
@@ -37,7 +37,7 @@
             </div>
             <!--Submit Button-->
             <div class="flex justify-center">
-                <button class="auth-btn">SignUp</button>
+                <button class="auth-btn">Signup</button>
             </div>
             <!--Login Redirect-->
             <div>
@@ -45,6 +45,15 @@
                     Already have an account? <a href="{{ route('login') }}"
                         class="text-purple-600 font-medium hover:underline">Login</a>
                 </p>
+            </div>
+            <div class="text-center">
+                @if($errors->any())
+                    <ul class="text-red-600 text-md">
+                        @foreach($errors->all() as $err)
+                            <li>{{ $err }}</li>
+                        @endforeach
+                    </ul>
+                @endif
             </div>
         </form>
     </div>

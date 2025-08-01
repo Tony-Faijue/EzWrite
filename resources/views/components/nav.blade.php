@@ -20,7 +20,7 @@
                 <a href="{{ route('blogs-index') }}" class="text-zinc-100 px-4 py-2 hover:text-orange-400">Blogs</a>
                 <a href="#" class="text-zinc-100 px-4 py-2 hover:text-orange-400">About</a>
                 <a href="#" class="text-zinc-100 px-4 py-2 hover:text-orange-400">Contact</a>
-                <a href="{{route('register')  }}" class="text-zinc-100 px-4 py-2 hover:text-orange-400">SignUp</a>
+                <a href="{{route('register')  }}" class="text-zinc-100 px-4 py-2 hover:text-orange-400">Signup</a>
                 <a href="{{route('login')  }}" class="text-zinc-100 px-4 py-2 hover:text-orange-400">Login</a>
 
             </div>
