@@ -14,6 +14,11 @@ class SectionController extends Controller
      */
     public function index(Blog $blog)
     {
+        //Security to prevent Access by other Authors
+        if ($blog->user_id != auth()->id()) {
+            abort(403);
+        }
+
         //how to pass a specific blog to help filter sections for a blog??
         $sections = $blog->sections()->orderBy("id", "desc")->paginate(10);
         return view('user.blogsections', compact('blog', 'sections'));
@@ -24,6 +29,10 @@ class SectionController extends Controller
      */
     public function create(Blog $blog)
     {
+        //Security to prevent Access by other Authors
+        if ($blog->user_id != auth()->id()) {
+            abort(403);
+        }
         //Use of the compact function to create an array of the parameters given for the blog
         //pass the array to the view
         return view('user.create-section', compact('blog'));
@@ -34,6 +43,10 @@ class SectionController extends Controller
      */
     public function store(Request $request, Blog $blog)
     {
+        //Security to prevent Access by other Authors
+        if ($blog->user_id != auth()->id()) {
+            abort(403);
+        }
         //Create 2 fields file and url for image to be validated
         $validated = $request->validate([
             'heading' => 'required|string|max:500',
@@ -72,6 +85,10 @@ class SectionController extends Controller
      */
     public function show(Blog $blog, BlogSection $section)
     {
+        //Security to prevent Access by other Authors
+        if ($blog->user_id != auth()->id()) {
+            abort(403);
+        }
         //Use of the compact function to create an array of the parameters given
         //pass the array to the view
         //dd($section);
@@ -83,6 +100,10 @@ class SectionController extends Controller
      */
     public function edit(Blog $blog, BlogSection $section)
     {
+        //Security to prevent Access by other Authors
+        if ($blog->user_id != auth()->id()) {
+            abort(403);
+        }
         //Use of the compact function to create an array of the parameters given for the blog
         //pass the array to the view
         return view('user.update-section', compact('blog', 'section'));
@@ -93,6 +114,10 @@ class SectionController extends Controller
      */
     public function update(Request $request, Blog $blog, BlogSection $section)
     {
+        //Security to prevent Access by other Authors
+        if ($blog->user_id != auth()->id()) {
+            abort(403);
+        }
         //dd($request->all(), $request->files->all());
         //Validate the inputs
         $validated = $request->validate([
@@ -133,6 +158,10 @@ class SectionController extends Controller
      */
     public function destroy(Blog $blog, BlogSection $section)
     {
+        //Security to prevent Access by other Authors
+        if ($blog->user_id != auth()->id()) {
+            abort(403);
+        }
         //delete the section
         $section->delete();
         //redirect
@@ -147,6 +176,10 @@ class SectionController extends Controller
      */
     public function confirmDelete(Blog $blog, BlogSection $section)
     {
+        //Security to prevent Access by other Authors
+        if ($blog->user_id != auth()->id()) {
+            abort(403);
+        }
         return view('user.delete-section-confirm', compact('blog', 'section'));
     }
 

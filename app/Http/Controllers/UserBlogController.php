@@ -67,7 +67,7 @@ class UserBlogController extends Controller
     /**
      * Display the specified user blog resource.
      */
-    public function show(string $id)
+    public function show(Blog $blog)
     {
         //
     }
@@ -75,7 +75,7 @@ class UserBlogController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Blog $blog)
     {
         //
     }
@@ -83,7 +83,7 @@ class UserBlogController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Blog $blog): void
     {
         //
     }
@@ -91,7 +91,7 @@ class UserBlogController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Blog $blog)
     {
         //
     }

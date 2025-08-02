@@ -16,7 +16,7 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-//----------Login, Register and Logout Routes----------------
+//----------Login and Register Routes----------------
 Route::middleware('guest')->group(function () {
     Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
     Route::post('/register', [AuthController::class, 'register']);
@@ -37,11 +37,11 @@ Route::middleware('auth')->group(function () {
     Route::prefix('/user/blogs')->group(function () {
         Route::get('', [UserBlogController::class, 'index'])->name('user-blogs-index');
         Route::get('/create', [UserBlogController::class, 'create'])->name('user-blogs-create');
-        Route::get('/{id}', [UserBlogController::class, 'show'])->name('user-blogs-show');
+        Route::get('/{blog}', [UserBlogController::class, 'show'])->name('user-blogs-show');
         Route::post('', [UserBlogController::class, 'store'])->name('user-blogs-store');
-        Route::get('/{id}/edit', [UserBlogController::class, 'edit'])->name('user-blogs-edit');
-        Route::put('/{id}', [UserBlogController::class, 'update'])->name('user-blogs-update');
-        Route::delete('/{id}', [UserBlogController::class, 'delete']);
+        Route::get('/{blog}/edit', [UserBlogController::class, 'edit'])->name('user-blogs-edit');
+        Route::put('/{blog}', [UserBlogController::class, 'update'])->name('user-blogs-update');
+        Route::delete('/{blog}', [UserBlogController::class, 'delete']);
 
         //----------Blog Section Routes----------------
         //Nested Section Routes under Blogs resource
