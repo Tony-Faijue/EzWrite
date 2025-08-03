@@ -68,31 +68,42 @@ class UserBlogController extends Controller
      * Display the specified user blog resource.
      */
     public function show(Blog $blog)
-    {
-        //
+    {   //Handle Access by other users
+        if ($blog->user_id != auth()->id()) {
+            abort(404);
+        }
     }
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Blog $blog)
-    {
-        //
+    {   //Handle Access by other users
+        if ($blog->user_id != auth()->id()) {
+            abort(404);
+        }
+
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, Blog $blog): void
-    {
-        //
+    {   //Handle Access by other users
+        if ($blog->user_id != auth()->id()) {
+            abort(404);
+        }
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Blog $blog)
-    {
-        //
+    {   //Handle Access by other users
+        if ($blog->user_id != auth()->id()) {
+            abort(404);
+        }
+
     }
 }
