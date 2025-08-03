@@ -14,7 +14,7 @@
     @apply bg-white shadow-xl rounded-2xl w-full max-w-md p-6 sm:p-8;
 }
 .full-bg-card{
-    @apply bg-white shadow-xl rounded-2xl p-6 sm:p-8;
+    @apply bg-white shadow-xl rounded-2xl md:px-8 sm:px-6;
 }
 .bg-grad-1{
     @apply min-h-screen bg-gradient-to-br from-cyan-50 to-cyan-100 flex items-center justify-center p-4;
@@ -23,7 +23,7 @@
     @apply min-h-screen bg-gradient-to-br from-cyan-100 to-purple-300 gap-2;
 }
 .bg-grad-3{
-    @apply min-h-screen bg-gradient-to-br from-orange-300 to-purple-400 gap-2 p-4;
+    @apply min-h-screen bg-slate-700 text-white gap-2 p-4;
 }
 .heading-form-title{
     @apply text-3xl font-extrabold text-center text-zinc-800 mb-6;
@@ -72,4 +72,7 @@
 }
 .preserve-whitespace{
     white-space: pre-wrap;
+}
+.heading{
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
 }
