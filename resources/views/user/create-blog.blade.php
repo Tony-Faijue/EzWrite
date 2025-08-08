@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-<!-- Use of push to the value to the name stacked from layout view-->
+<!-- Use of push directive to the value to the name stacked from layout view-->
 <!-- Here this view links to js script file related to the form -->
 <!-- JS File to handle dynamic add and delete on the form parameters -->
 @push('scripts')

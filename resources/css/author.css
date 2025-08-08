@@ -1,0 +1,137 @@
+/**
+* @license
+*
+* Font Family: Author
+* Designed by: Satya Rajpurohit
+* URL: https://www.fontshare.com/fonts/author
+* © 2025 Indian Type Foundry
+*
+* Author Extralight 
+* Author ExtralightItalic 
+* Author Light 
+* Author LightItalic 
+* Author Regular 
+* Author Italic 
+* Author Medium 
+* Author MediumItalic 
+* Author Semibold 
+* Author SemiboldItalic 
+* Author Bold 
+* Author BoldItalic 
+* Author Variable (Variable font)
+
+*
+*/
+@font-face {
+  font-family: 'Author-Extralight';
+  src: url('../fonts/author/Author-Extralight.woff2') format('woff2'),
+       url('../fonts/author/Author-Extralight.woff') format('woff');
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Author-ExtralightItalic';
+  src: url('../fonts/author/Author-ExtralightItalic.woff2') format('woff2'),
+       url('../fonts/author/Author-ExtralightItalic.woff') format('woff');
+  font-weight: 200;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Author-Light';
+  src: url('../fonts/author/Author-Light.woff2') format('woff2'),
+       url('../fonts/author/Author-Light.woff') format('woff');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Author-LightItalic';
+  src: url('../fonts/author/Author-LightItalic.woff2') format('woff2'),
+       url('../fonts/author/Author-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Author-Regular';
+  src: url('../fonts/author/Author-Regular.woff2') format('woff2'),
+       url('../fonts/author/Author-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Author-Italic';
+  src: url('../fonts/author/Author-Italic.woff2') format('woff2'),
+       url('../fonts/author/Author-Italic.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Author-Medium';
+  src: url('../fonts/author/Author-Medium.woff2') format('woff2'),
+       url('../fonts/author/Author-Medium.woff') format('woff');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Author-MediumItalic';
+  src: url('../fonts/author/Author-MediumItalic.woff2') format('woff2'),
+       url('../fonts/author/Author-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Author-Semibold';
+  src: url('../fonts/author/Author-Semibold.woff2') format('woff2'),
+       url('../fonts/author/Author-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Author-SemiboldItalic';
+  src: url('../fonts/author/Author-SemiboldItalic.woff2') format('woff2'),
+       url('../fonts/author/Author-SemiboldItalic.woff') format('woff');
+  font-weight: 600;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Author-Bold';
+  src: url('../fonts/author/Author-Bold.woff2') format('woff2'),
+       url('../fonts/author/Author-Bold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Author-BoldItalic';
+  src: url('../fonts/author/Author-BoldItalic.woff2') format('woff2'),
+       url('../fonts/author/Author-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 700.0;
+*
+* available axes:
+'wght' (range from 200.0 to 700.0
+*/
+@font-face {
+  font-family: 'Author-Variable';
+  src: url('../fonts/author/Author-Variable.woff2') format('woff2'),
+       url('../fonts/author/Author-Variable.woff') format('woff');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
