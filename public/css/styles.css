@@ -1,3 +1,43 @@
+/*
+    Font Styles in the Author Font Family
+*/
+.author-reg {
+    font-family: Author-Regular, sans-serif;
+}
+.author-italic{
+    font-family: Author-Italic, sans-serif;
+}
+.author-light{
+    font-family: Author-Light, sans-serif;
+}
+.author-light-italic{
+    font-family: Author-LightItalic, sans-serif;
+}
+.author-extralight{
+    font-family: Author-Extralight, sans-serif;
+}
+.author-extralight-italic{
+    font-family: ExtralightItalic, sans-serif;
+}
+.author-medium{
+    font-family: Author-Medium, sans-serif;
+}
+.author-medium-italic{
+    font-family: Author-MediumItalic, sans-serif;
+}
+.author-semibold{
+    font-family: Author-Semibold, sans-serif;
+}
+.author-semibold-italic{
+    font-family: Author-SemiboldItalic, sans-serif;
+}
+.author-bold{
+    font-family: Author-Bold, sans-serif;
+}
+.author-bold-italic{
+    font-family: Author-BoldItalic, sans-serif;
+}
+
 footer {
     text-align: center;
     font-size: 0.85em;

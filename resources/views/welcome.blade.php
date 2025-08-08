@@ -7,7 +7,7 @@
             <div class="space-y-6">
                 <div class="container mx-auto px-4 py-8 my-6 sm:px-6 lg:px-8 space-y-6">
                     <p class="text-base place-self-end">Dive in head first into the experience</p>
-                    <h1 class="text-3xl md:text-4xl lg:text-6xl">Start Your Journey With Blogs</h1>
+                    <h1 class="text-3xl md:text-4xl lg:text-6xl author-bold">Start Your Journey With Blogs</h1>
                     <p class="text-base md:text-lg lg:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Quaerat consectetur illum, modi iste maxime delectus?</p>
                     <div class="flex flex-row gap-8 md:gap-14">

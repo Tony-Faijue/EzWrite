@@ -34,7 +34,7 @@ class Blog extends Model
     }
     /**
      * Defines a relationship with sections which a blog has many sections
-     * @return \Illuminate\Database\Query\Builder
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function sections()
     {
