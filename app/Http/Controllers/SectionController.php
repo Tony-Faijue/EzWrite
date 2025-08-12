@@ -19,7 +19,7 @@ class SectionController extends Controller
             abort(403);
         }
 
-        //how to pass a specific blog to help filter sections for a blog??
+        //Paginate sections for a blog
         $sections = $blog->sections()->orderBy("id", "desc")->paginate(10);
         return view('user.blogsections', compact('blog', 'sections'));
     }
@@ -162,6 +162,12 @@ class SectionController extends Controller
         if ($blog->user_id != auth()->id()) {
             abort(403);
         }
+        //delete the stored image from storage
+        if ($section->section_image && !str_starts_with($section->section_image, 'http')) {
+            //Go to disk in public storage folder and delete corresponding image
+            Storage::disk('public')->delete($section->section_image);
+        }
+
         //delete the section
         $section->delete();
         //redirect

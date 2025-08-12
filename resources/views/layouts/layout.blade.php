@@ -16,7 +16,7 @@
 
     <!-- Use of the stack direct to allow js for child views -->
     @stack('scripts')
-    <title>Blog App</title>
+    <title>{{ config('app.name') }}</title>
 </head>
 
 <body>
