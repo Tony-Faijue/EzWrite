@@ -24,44 +24,53 @@
                         <button class="create-section-btn">Create A New Section</button>
                     </a>
                 </div>
-                <ul>
-                    <!-- Loop through each section -->
-                    @foreach ($sections as $section)
-                        <div class="user-form-bg my-4">
-                            <li>
-                                <!-- import  section-cards component -->
-                                <x-card.section-cards>
-                                    <!-- Display properties of $section -->
-                                    <h1 class="text-center text-2xl">{{$section->heading}}</h1>
 
-                                    <!-- Section Image -->
-                                    @empty($section->section_image)
-                                        <p class="text-center text-red-600">No Image Available</p>
-                                    @else
-                                        <!-- Call the image_src method to display stored image -->
-                                        <img src="{{ $section->image_src }}" class="shadow-lg shadow-indigo-800 w-auto mt-2 mb-2">
-                                    @endempty
+                @if(count($sections) == 0)
+                    <div class="user-form-bg">
+                        <x-card.section-cards>
+                            <p>No sections created for the blog</p>
+                        </x-card.section-cards>
+                    </div>
+                @else
+                    <ul>
+                        <!-- Loop through each section -->
+                        @foreach ($sections as $section)
+                            <div class="user-form-bg my-4">
+                                <li>
+                                    <!-- import  section-cards component -->
+                                    <x-card.section-cards>
+                                        <!-- Display properties of $section -->
+                                        <h1 class="text-center text-2xl">{{$section->heading}}</h1>
 
-                                    <!-- Content -->
-                                    <p class="mt-2 mb-2 preserve-whitespace">{{ $section->content }}</p>
-                                    <!-- Update Button -->
-                                    <div class="grid grid-cols-4">
-                                        <a href="{{ route('sections-edit', [$blog, $section]) }}"><button
-                                                class="update-blog-btn col-start-1 col-end-2">Update</button></a>
-                                        <button class="delete-blog-btn col-start-4"><a
-                                                href="{{ route('sections-confirm-delete', [$blog, $section]) }}">Delete</a></button>
-                                    </div>
-                                    <div class="text-right mt-4">
-                                        <button class="view-blog-btn">
-                                            <!-- Pass the required params that are expected in the section-show route-->
-                                            <a href="{{ route('sections-show', [$blog, $section]) }}">View Section</a>
-                                        </button>
-                                    </div>
-                                </x-card.section-cards>
-                            </li>
-                        </div>
-                    @endforeach
-                </ul>
+                                        <!-- Section Image -->
+                                        @empty($section->section_image)
+                                            <p class="text-center text-red-600">No Image Available</p>
+                                        @else
+                                            <!-- Call the image_src method to display stored image -->
+                                            <img src="{{ $section->image_src }}" class="shadow-lg shadow-indigo-800 w-auto mt-2 mb-2">
+                                        @endempty
+
+                                        <!-- Content -->
+                                        <p class="mt-2 mb-2 preserve-whitespace">{{ $section->content }}</p>
+                                        <!-- Update Button -->
+                                        <div class="grid grid-cols-4">
+                                            <a href="{{ route('sections-edit', [$blog, $section]) }}"><button
+                                                    class="update-blog-btn col-start-1 col-end-2">Update</button></a>
+                                            <button class="delete-blog-btn col-start-4"><a
+                                                    href="{{ route('sections-confirm-delete', [$blog, $section]) }}">Delete</a></button>
+                                        </div>
+                                        <div class="text-right mt-4">
+                                            <button class="view-blog-btn">
+                                                <!-- Pass the required params that are expected in the section-show route-->
+                                                <a href="{{ route('sections-show', [$blog, $section]) }}">View Section</a>
+                                            </button>
+                                        </div>
+                                    </x-card.section-cards>
+                                </li>
+                            </div>
+                        @endforeach
+                    </ul>
+                @endif
             </div>
             <!-- Pagnation Links -->
             <div>

@@ -3,7 +3,7 @@
     <nav class="p-4">
         <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center">
             <div class="text-purple-900 font-bold text-3xl mb-4 lg:mb-0 hover:text-orange-400 hover:cursor-pointer">
-                <p>Blog App<i class="fa fa-users ml-2" aria-hidden="true"></i>
+                <p>{{ config('app.name') }}<i class="fa fa-users ml-2" aria-hidden="true"></i>
                 </p>
             </div>
             <div class="lg:hidden">
