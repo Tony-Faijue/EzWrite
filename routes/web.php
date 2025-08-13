@@ -34,29 +34,31 @@ Route::middleware('auth')->group(function () {
     //----------User Blog Routes----------------
     //Group User Blog CRUD Operations Routes and Forms
     //Use of prefix function with group function to list similar uri for routes
-    Route::prefix('/user/blogs')->group(function () {
-        Route::get('', [UserBlogController::class, 'index'])->name('user-blogs-index');
-        Route::get('/create', [UserBlogController::class, 'create'])->name('user-blogs-create');
-        Route::get('/{blog}', [UserBlogController::class, 'show'])->name('user-blogs-show');
-        Route::post('', [UserBlogController::class, 'store'])->name('user-blogs-store');
-        Route::get('/{blog}/edit', [UserBlogController::class, 'edit'])->name('user-blogs-edit');
-        Route::put('/{blog}', [UserBlogController::class, 'update'])->name('user-blogs-update');
-        Route::delete('/{blog}', [UserBlogController::class, 'delete']);
+    Route::prefix('/user/blogs')
+        ->scopeBindings()
+        ->group(function () {
+            Route::get('', [UserBlogController::class, 'index'])->name('user-blogs-index');
+            Route::get('/create', [UserBlogController::class, 'create'])->name('user-blogs-create');
+            Route::get('/{blog}', [UserBlogController::class, 'show'])->name('user-blogs-show');
+            Route::post('', [UserBlogController::class, 'store'])->name('user-blogs-store');
+            Route::get('/{blog}/edit', [UserBlogController::class, 'edit'])->name('user-blogs-edit');
+            Route::put('/{blog}', [UserBlogController::class, 'update'])->name('user-blogs-update');
+            Route::delete('/{blog}', [UserBlogController::class, 'delete']);
 
-        //----------Blog Section Routes----------------
-        //Nested Section Routes under Blogs resource
-        //Use of prefix function with group function list similar uri for routes
-        Route::prefix('/{blog}/sections')->group(function () {
-            Route::get('', [SectionController::class, 'index'])->name('sections-index');
-            Route::get('/create', [SectionController::class, 'create'])->name('sections-create');
-            Route::post('', [SectionController::class, 'store'])->name('sections-store');
-            Route::get('/{section}', [SectionController::class, 'show'])->name('sections-show');
-            Route::get('/{section}/edit', [SectionController::class, 'edit'])->name('sections-edit');
-            Route::put('/{section}', [SectionController::class, 'update'])->name('sections-update');
-            Route::get('/{section}/confirm-delete', [SectionController::class, 'confirmDelete'])->name('sections-confirm-delete');
-            Route::delete('/{section}', [SectionController::class, 'destroy'])->name('sections-delete');
+            //----------Blog Section Routes----------------
+            //Nested Section Routes under Blogs resource
+            //Use of prefix function with group function list similar uri for routes
+            Route::prefix('/{blog}/sections')->group(function () {
+                Route::get('', [SectionController::class, 'index'])->name('sections-index');
+                Route::get('/create', [SectionController::class, 'create'])->name('sections-create');
+                Route::post('', [SectionController::class, 'store'])->name('sections-store');
+                Route::get('/{section}', [SectionController::class, 'show'])->name('sections-show');
+                Route::get('/{section}/edit', [SectionController::class, 'edit'])->name('sections-edit');
+                Route::put('/{section}', [SectionController::class, 'update'])->name('sections-update');
+                Route::get('/{section}/confirm-delete', [SectionController::class, 'confirmDelete'])->name('sections-confirm-delete');
+                Route::delete('/{section}', [SectionController::class, 'destroy'])->name('sections-delete');
+            });
         });
-    });
 });
 
 //----------Routes all Users can access----------------

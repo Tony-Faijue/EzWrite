@@ -19,9 +19,9 @@
                         <!-- Display blog properties -->
                         @foreach ($blogs as $blog)
                             <div class="user-form-bg my-4">
-                                <a href="{{ route('sections-index', $blog) }}">
-                                    <button class="manage-sections-btn col-start-4">Manage Sections</button>
-                                </a>
+                                <button class="manage-sections-btn col-start-4"><a
+                                        href="{{ route('sections-index', $blog) }}">Manage Sections</a></button>
+
                                 <li>
                                     <!-- import blog-cards component -->
                                     <x-card.blog-cards>
@@ -31,9 +31,8 @@
                                         <!-- Topics -->
                                         <div class="">
                                             <ul class="flex flex-row flex-nowrap overflow-x-auto gap-4 mt-2 mb-2">
-                                                <!-- Use of null coalescing operator ??  
-                                                                                                            To check if the array hero_topics exists and is not null use its value
-                                                                                                            otherwise use an empty array-->
+                                                <!-- Use of null coalescing operator ?? To check if the array hero_topics exists and is not null use its value-->
+                                                <!--otherwise use an empty array-->
                                                 <!-- Use of forelse directive with empty -->
                                                 @forelse ($blog->hero_topics ?? [] as $topic)
                                                     <li class="bg-gray-300 rounded-2xl pl-2 pr-2">{{$topic}}</li>
@@ -61,9 +60,11 @@
                                         <!-- Introduction -->
                                         <p class="mt-2 mb-2">{{ $blog->intro }}</p>
                                         <!-- Update Button -->
-                                        <div class="grid grid-cols-4">
-                                            <button class="update-blog-btn col-start-1 col-end-2">Update</button>
-                                            <button class="delete-blog-btn col-start-4">Delete</button>
+                                        <div class="flex flex-row justify-items-center gap-12">
+                                            <button class="update-blog-btn">Update</button>
+                                            <button class="view-blog-btn w-25 text-center"><a
+                                                    href="{{ route('user-blogs-show', $blog) }}">View</a></button>
+                                            <button class="delete-blog-btn">Delete</button>
                                         </div>
                                     </x-card.blog-cards>
                                 </li>

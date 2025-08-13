@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class UserBlogController extends Controller
 {
@@ -72,6 +73,11 @@ class UserBlogController extends Controller
         if ($blog->user_id != auth()->id()) {
             abort(404);
         }
+
+        //Sections of the blog
+        $sections = $blog->sections()->orderBy('created_at', 'desc')->get();
+
+        return view('user.blog', compact('blog', 'sections'));
     }
 
     /**
