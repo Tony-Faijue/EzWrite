@@ -71,7 +71,7 @@
 
 }
 .view-blog-btn{
-    @apply flex justify-self-center min-w-auto bg-orange-400 hover:bg-orange-600 text-slate-900 font-semibold py-3 px-3 rounded-lg shadow-md transition-all duration-200;
+    @apply w-25 bg-orange-400 hover:bg-orange-600 text-slate-900 font-semibold py-3 px-3 rounded-lg shadow-md transition-all duration-200;
 
 }
 .create-section-btn{

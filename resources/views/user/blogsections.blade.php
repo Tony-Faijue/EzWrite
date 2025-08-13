@@ -21,7 +21,8 @@
                 <div>
                     <!-- Pass the blog parameter to the section create route -->
                     <a href="{{ route('sections-create', $blog) }}">
-                        <button class="create-section-btn">Create A New Section</button>
+                        <button class="create-section-btn inline-flex items-center justify-center">Create A New
+                            Section</button>
                     </a>
                 </div>
 
@@ -59,7 +60,7 @@
                                             <button class="delete-blog-btn col-start-4"><a
                                                     href="{{ route('sections-confirm-delete', [$blog, $section]) }}">Delete</a></button>
                                         </div>
-                                        <div class="text-right mt-4">
+                                        <div class="text-center mt-4">
                                             <button class="view-blog-btn">
                                                 <!-- Pass the required params that are expected in the section-show route-->
                                                 <a href="{{ route('sections-show', [$blog, $section]) }}">View Section</a>
