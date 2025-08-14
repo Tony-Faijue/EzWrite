@@ -15,6 +15,7 @@ return new class extends Migration {
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('hero_title');
             $table->string('intro');
+            $table->boolean('is_public');
             $table->json('hero_topics')->nullable();
             $table->json('hero_authors')->nullable();
             $table->string('hero_image')->nullable();

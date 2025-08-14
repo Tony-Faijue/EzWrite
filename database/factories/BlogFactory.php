@@ -28,6 +28,7 @@ class BlogFactory extends Factory
         return [
             'hero_title' => fake()->realText(50),
             'intro' => fake()->realText(250),
+            'is_public' => true,
             'hero_topics' => fake()->words(3),
             'hero_authors' => $authors,
             'hero_image' => $imageURL,

@@ -43,11 +43,11 @@
                                             </ul>
                                         </div>
                                         <!-- Hero Image -->
-                                        @empty($blog->hero_image)
-                                            <p>No Image Available</p>
+                                        @isset($blog->hero_image_src)
+                                            <img src="{{ $blog->hero_image_src }}" class="shadow-lg shadow-cyan-200 w-auto mt-2 mb-2">
                                         @else
-                                            <img src="{{ $blog->hero_image }}" class="shadow-lg shadow-cyan-200 w-auto mt-2 mb-2">
-                                        @endempty
+                                            <p>No Image Available</p>
+                                        @endisset
                                         <!-- Authors -->
                                         <ul class="flex flex-row flex-nowrap overflow-x-auto gap-2 mt-2 mb-2">
                                             <p class="text-sm">Contributors:</p>
@@ -61,7 +61,8 @@
                                         <p class="mt-2 mb-2">{{ $blog->intro }}</p>
                                         <!-- Update Button -->
                                         <div class="flex flex-row justify-items-center gap-12">
-                                            <button class="update-blog-btn">Update</button>
+                                            <button class="update-blog-btn">
+                                                <a href="{{ route('user-blogs-edit', $blog) }}">Update</a></button>
                                             <button class="view-blog-btn w-25 text-center"><a
                                                     href="{{ route('user-blogs-show', $blog) }}">View</a></button>
                                             <button class="delete-blog-btn">Delete</button>

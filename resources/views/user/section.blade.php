@@ -8,10 +8,10 @@
                 <h1 class="heading mt-4 text-center">{{ $section->heading }}
                 </h1>
                 <div class="flex flex-col justify-center gap-6">
-                    @if($section->section_image)
+                    @if($section->section_image_src)
                         <!-- Check if the image is a URL, File Located in Storage or null -->
-                        <img src="{{ Str::startsWith($section->section_image, ['http://', 'https://']) ? $section->section_image : asset('storage/' . $section->section_image) }}"
-                            alt="Section Image" class="2xl:w-250 2xl:h-150 place-self-center rounded-2xl object-contain" />
+                        <img src="{{ $section->section_image_src}}" alt="Section Image"
+                            class="2xl:w-250 2xl:h-150 place-self-center rounded-2xl object-contain" />
                     @endif
                     <p class="px-10 text-base sm:text-lg mb-8 preserve-whitespace">{{$section->content}}</p>
                 </div>

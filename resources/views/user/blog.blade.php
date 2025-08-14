@@ -26,10 +26,10 @@
                     </ul>
                 </div>
                 <!-- Hero Image -->
-                @empty($blog->hero_image)
+                @empty($blog->hero_image_src)
                     <p class="text-center text-red-600">No Image Available</p>
                 @else
-                    <img class="w-full" src="{{ $blog->hero_image }}">
+                    <img class="w-full" src="{{ $blog->hero_image_src }}">
                 @endempty
 
                 <!-- Introduction -->
@@ -43,7 +43,9 @@
                         <div class="justify-items-center border border-purple-500 space-y-2">
                             <h1 class="text-3xl lg:text-5xl text-center px-8">{{ $section->heading }}</h1>
                             <p class="text-lg text-center px-8">{{ $section->content }}</p>
-                            <img class="w-full aspect-4/3" src="{{ $section->section_image }}">
+                            @if($section->section_image)
+                                <img class="w-full aspect-4/3" src="{{ $section->section_image_src }}">
+                            @endif
                         </div>
                     @endforeach
                 </div>

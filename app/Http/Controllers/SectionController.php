@@ -47,6 +47,8 @@ class SectionController extends Controller
         if ($blog->user_id != auth()->id()) {
             abort(403);
         }
+        //dd($request->all(), $request->files->all());
+
         //Create 2 fields file and url for image to be validated
         $validated = $request->validate([
             'heading' => 'required|string|max:500',
@@ -69,7 +71,7 @@ class SectionController extends Controller
             $pathOrUrl = $validated['section_image_url'];
         }
 
-        //Merge the chosen path/URL back into the data array
+        //Merge the chosen path/URL 
         $data = [
             'heading' => $validated['heading'],
             'content' => $validated['content'],
@@ -118,7 +120,7 @@ class SectionController extends Controller
         if ($blog->user_id != auth()->id()) {
             abort(403);
         }
-        //dd($request->all(), $request->files->all());
+        // dd($request->all(), $request->files->all());
         //Validate the inputs
         $validated = $request->validate([
             'heading' => 'required|string|max:500',
