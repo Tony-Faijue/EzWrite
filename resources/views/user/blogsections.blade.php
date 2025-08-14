@@ -44,11 +44,12 @@
                                         <h1 class="text-center text-2xl">{{$section->heading}}</h1>
 
                                         <!-- Section Image -->
-                                        @empty($section->section_image)
+                                        @empty($section->section_image_src)
                                             <p class="text-center text-red-600">No Image Available</p>
                                         @else
                                             <!-- Call the image_src method to display stored image -->
-                                            <img src="{{ $section->image_src }}" class="shadow-lg shadow-indigo-800 w-auto mt-2 mb-2">
+                                            <img src="{{ $section->section_image_src }}"
+                                                class="shadow-lg shadow-indigo-800 w-auto mt-2 mb-2">
                                         @endempty
 
                                         <!-- Content -->

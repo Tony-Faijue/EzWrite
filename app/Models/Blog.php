@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use File;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 class Blog extends Model
 {
     /** @use HasFactory<\Database\Factories\BlogFactory> */
@@ -14,11 +16,13 @@ class Blog extends Model
     protected $casts = [
         'hero_topics' => 'array',
         'hero_authors' => 'array',
+        'is_public' => 'boolean',
     ];
     //Identify which attributes can be mass-assigned
     protected $fillable = [
         'hero_title',
         'intro',
+        'is_public',
         'hero_topics',
         'hero_authors',
         'hero_image',
@@ -40,6 +44,23 @@ class Blog extends Model
     {
         return $this->hasMany(BlogSection::class)
             ->orderBy('position');
+    }
+    /**
+     * Returns hero image as a URL, Storage Path, or Null
+     * @return string|null
+     */
+    public function getHeroImageSrcAttribute(): string|null
+    {
+
+        if (!$this->hero_image) {
+            return null;
+        }
+        //External URL
+        if (Str::startsWith($this->hero_image, ['http://', 'https://'])) {
+            return $this->hero_image;
+        }
+        //Stored Image File
+        return Storage::disk('public')->url($this->hero_image);
     }
     public function related()
     {
