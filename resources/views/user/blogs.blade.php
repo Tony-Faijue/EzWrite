@@ -1,10 +1,21 @@
 @extends('layouts.layout')
 
+@push('scripts')
+    <script src="{{ asset('js/flash-success.js') }}"></script>
+@endpush
+
 @section('content')
     <div class="bg-grad-2 flex min-h-screen">
         <!-- import of user side-nav component -->
         <x-user.side-nav />
         <div class="flex-1 flex flex-col">
+            <!-- Success Message -->
+            @if(session('Success'))
+                <div id="flash"
+                    class=" flash-success p-4 text-center bg-emerald-200 text-emerald-800 place-self-end rounded-lg w-1/4 mt-4 mr-2">
+                    {{session('Success')}}
+                </div>
+            @endif
             <div class="flex-1 overflow-auto space-y-6 place-self-center mt-10">
 
                 @if(count($blogs) == 0)
@@ -65,7 +76,8 @@
                                                 <a href="{{ route('user-blogs-edit', $blog) }}">Update</a></button>
                                             <button class="view-blog-btn w-25 text-center"><a
                                                     href="{{ route('user-blogs-show', $blog) }}">View</a></button>
-                                            <button class="delete-blog-btn">Delete</button>
+                                            <button class="delete-blog-btn">
+                                                <a href="{{ route('user-blogs-confirm-delete', $blog) }}">Delete</a></button>
                                         </div>
                                     </x-card.blog-cards>
                                 </li>

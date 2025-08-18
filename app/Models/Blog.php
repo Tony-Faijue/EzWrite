@@ -29,6 +29,21 @@ class Blog extends Model
         'footer_about'
     ];
     /**
+     * function that is a lifecycle hook for blog model
+     * @return void
+     */
+    protected static function booted()
+    {
+        // delete stored image file on public disk
+        static::deleting(function (Blog $blog) {
+            if ($blog->hero_image && !str_starts_with($blog->hero_image, 'http')) {
+                Storage::disk('public')->delete($blog->hero_image);
+            }
+            //delete corresponding sections
+            $blog->sections->each->delete();
+        });
+    }
+    /**
      * Defines a relationship with a user which a blog belongs to a user
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo<User, Blog>
      */

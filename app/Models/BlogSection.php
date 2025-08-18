@@ -26,12 +26,12 @@ class BlogSection extends Model
     //booted() static eloquent hook called when model class in intialized
     //Used to register event listeners
     /**
-     * Automatically updates the position for a blog section for a blog
+     * lifecycle hook for blog section model
      * @return void
      */
     protected static function booted()
     {
-        //Use of the creating function for a model event
+        //Use of the creating function for a model event that update the position for each blog section
         static::creating(function ($section) {
             //Check if position is already set
             if (is_null($section->position)) {
@@ -39,6 +39,12 @@ class BlogSection extends Model
                 $max = $section->blog->sections()->max('position') ?? 0;
                 //Assign the new section to max + 1
                 $section->position = $max + 1;
+            }
+        });
+        //delete stored image file in public disk
+        static::deleting(function ($section) {
+            if ($section->section_image && !str_starts_with($section->section_image, 'http')) {
+                Storage::disk('public')->delete($section->section_image);
             }
         });
     }

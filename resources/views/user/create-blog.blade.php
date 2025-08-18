@@ -49,7 +49,7 @@
                             class="h-10 pl-4 pr-4 input-blog-form input-blog-form-focus"
                             placeholder="https://example.com/image.jpg" />
                         <!-- Optional File Image -->
-                        <label for="hero_image_file" class="text-2xl">Section Image File</label>
+                        <label for="hero_image_file" class="text-2xl">Hero Image File</label>
                         <input type="file" id="hero_image_file" name="hero_image_file"
                             class="h-10 pl-4 pr-4 input-blog-form input-blog-form-focus" accept="image/*" />
 
