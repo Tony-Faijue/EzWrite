@@ -12,7 +12,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::orderBy("created_at", "desc")->paginate(12);
+        $blogs = Blog::where('is_public', true)->orderBy("created_at", "desc")->paginate(12);
         return view('blogs.index', ['blogs' => $blogs]);
     }
 
