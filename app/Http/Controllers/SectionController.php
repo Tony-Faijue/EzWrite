@@ -53,7 +53,7 @@ class SectionController extends Controller
         $validated = $request->validate([
             'heading' => 'required|string|max:500',
             'content' => 'required|string|max:2500',
-            'section_image_file' => 'nullable|image|max:8192',
+            'section_image_file' => 'nullable|mimes:jpeg,jpg,png,gif,bmp,webp|max:8192',
             'section_image_url' => 'nullable|url|max:8192',
         ]);
 
@@ -164,16 +164,16 @@ class SectionController extends Controller
         if ($blog->user_id != auth()->id()) {
             abort(403);
         }
-        //delete the stored image from storage
-        if ($section->section_image && !str_starts_with($section->section_image, 'http')) {
-            //Go to disk in public storage folder and delete corresponding image
-            Storage::disk('public')->delete($section->section_image);
-        }
+        // //delete the stored image from storage
+        // if ($section->section_image && !str_starts_with($section->section_image, 'http')) {
+        //     //Go to disk in public storage folder and delete corresponding image
+        //     Storage::disk('public')->delete($section->section_image);
+        // }
 
         //delete the section
         $section->delete();
         //redirect
-        return redirect()->route('sections-index', $blog)->with('Success', 'Section Deleted Successfully');
+        return redirect()->route('sections-index', $blog)->with('Success', 'Section Deleted Successfully!');
     }
 
     /**

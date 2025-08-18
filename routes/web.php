@@ -43,7 +43,8 @@ Route::middleware('auth')->group(function () {
             Route::post('', [UserBlogController::class, 'store'])->name('user-blogs-store');
             Route::get('/{blog}/edit', [UserBlogController::class, 'edit'])->name('user-blogs-edit');
             Route::put('/{blog}', [UserBlogController::class, 'update'])->name('user-blogs-update');
-            Route::delete('/{blog}', [UserBlogController::class, 'delete']);
+            Route::get('/{blog}/confirm-delete', [UserBlogController::class, 'confirmDelete'])->name('user-blogs-confirm-delete');
+            Route::delete('/{blog}', [UserBlogController::class, 'destroy'])->name('user-blogs-delete');
 
             //----------Blog Section Routes----------------
             //Nested Section Routes under Blogs resource
