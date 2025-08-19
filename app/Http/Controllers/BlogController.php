@@ -19,9 +19,11 @@ class BlogController extends Controller
     /**
      * Display the specified blog resource.
      */
-    public function show(string $id)
+    public function show(Blog $blog)
     {
-        //
+        $sections = $blog->sections()->orderBy('created_at', 'desc')->get();
+
+        return view('blogs.show', compact('blog', 'sections'));
     }
 
 }

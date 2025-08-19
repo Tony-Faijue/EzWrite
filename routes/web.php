@@ -64,4 +64,4 @@ Route::middleware('auth')->group(function () {
 
 //----------Routes all Users can access----------------
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs-index');
-Route::get('/blogs/{id}', [BlogController::class, 'show'])->name('blogs-show');
+Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs-show');
