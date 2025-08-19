@@ -12,58 +12,60 @@
                         <!-- Loop through each blog -->
                         @foreach ($blogs as $blog)
                             <div class="blog-card-bg">
-                                <li>
-                                    <!-- import of blog-cards component -->
-                                    <x-card.blog-cards>
+                                <a href="{{ route('blogs-show', $blog) }}">
+                                    <li>
+                                        <!-- import of blog-cards component -->
+                                        <x-card.blog-cards>
 
-                                        <!-- Hero Image -->
-                                        <div class="aspect-square border border-amber-300">
-                                            @empty($blog->hero_image_src)
-                                                <p>No Image Available</p>
-                                            @else
-                                                <img src="{{ $blog->hero_image_src }}"
-                                                    class="blog-card-img shadow-md shadow-slate-700 w-auto">
-                                            @endempty
-                                        </div>
-
-                                        <!-- Display properties of $blog -->
-                                        <div class="aspect-16/9 border border-red-400">
-
-                                            <h1 class="text-center text-2xl">{{$blog->hero_title}}</h1>
-                                            <p class="text-center mt-2 mb-2">written by <i>{{ $blog->user->firstname }}
-                                                    {{ $blog->user->lastname }}</i></p>
-                                            <!-- Topics -->
-                                            <div class="">
-                                                <ul class="flex flex-row flex-nowrap overflow-x-auto gap-4 mt-2 mb-2">
-                                                    <!-- Use of null coalescing operator ??  
-                                                                                                                                                                                                                                                                                                                                                                            To check if the array hero_topics exists and is not null use its value
-                                                                                                                                                                                                                                                                                                                                                                            otherwise use an empty array-->
-                                                    <!-- Use of forelse directive with empty -->
-                                                    @forelse ($blog->hero_topics ?? [] as $topic)
-                                                        <li class="bg-neutral-400 rounded-2xl pl-2 pr-2">{{$topic}}</li>
-                                                    @empty
-                                                        <li>No topics are listed</li>
-                                                    @endforelse
-
-                                                </ul>
+                                            <!-- Hero Image -->
+                                            <div class="aspect-square border border-amber-300">
+                                                @empty($blog->hero_image_src)
+                                                    <p>No Image Available</p>
+                                                @else
+                                                    <img src="{{ $blog->hero_image_src }}"
+                                                        class="blog-card-img shadow-md shadow-slate-700 w-auto">
+                                                @endempty
                                             </div>
 
-                                            <!-- Authors -->
-                                            <ul class="flex flex-row flex-nowrap overflow-x-auto gap-2 mt-2 mb-2">
-                                                <p class="text-sm">Contributors:</p>
-                                                @forelse ($blog->hero_authors ?? [] as $author)
-                                                    <li class="text-sm">{{$author}}</li>
-                                                @empty
-                                                    <li>No other authors are listed</li>
+                                            <!-- Display properties of $blog -->
+                                            <div class="aspect-16/9 border border-red-400">
 
-                                                @endforelse
-                                            </ul>
+                                                <h1 class="text-center text-2xl">{{$blog->hero_title}}</h1>
+                                                <p class="text-center mt-2 mb-2">written by <i>{{ $blog->user->firstname }}
+                                                        {{ $blog->user->lastname }}</i></p>
+                                                <!-- Topics -->
+                                                <div class="">
+                                                    <ul class="flex flex-row flex-nowrap overflow-x-auto gap-4 mt-2 mb-2">
+                                                        <!-- Use of null coalescing operator ??  
+                                                                                                                                                                                                                                                                                                                                                                                                    To check if the array hero_topics exists and is not null use its value
+                                                                                                                                                                                                                                                                                                                                                                                                    otherwise use an empty array-->
+                                                        <!-- Use of forelse directive with empty -->
+                                                        @forelse ($blog->hero_topics ?? [] as $topic)
+                                                            <li class="bg-neutral-400 rounded-2xl pl-2 pr-2">{{$topic}}</li>
+                                                        @empty
+                                                            <li>No topics are listed</li>
+                                                        @endforelse
 
-                                            <!-- Introduction -->
-                                            <p class="mt-2 mb-2">{{ $blog->intro }}</p>
-                                        </div>
-                                    </x-card.blog-cards>
-                                </li>
+                                                    </ul>
+                                                </div>
+
+                                                <!-- Authors -->
+                                                <ul class="flex flex-row flex-nowrap overflow-x-auto gap-2 mt-2 mb-2">
+                                                    <p class="text-sm">Contributors:</p>
+                                                    @forelse ($blog->hero_authors ?? [] as $author)
+                                                        <li class="text-sm">{{$author}}</li>
+                                                    @empty
+                                                        <li>No other authors are listed</li>
+
+                                                    @endforelse
+                                                </ul>
+
+                                                <!-- Introduction -->
+                                                <p class="mt-2 mb-2">{{ $blog->intro }}</p>
+                                            </div>
+                                        </x-card.blog-cards>
+                                    </li>
+                                </a>
                             </div>
                         @endforeach
                     </div>
