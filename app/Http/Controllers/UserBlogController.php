@@ -152,7 +152,7 @@ class UserBlogController extends Controller
             'hero_authors' => 'nullable|array|max:5',
             'hero_authors.*' => 'nullable|string|max:255',
             'hero_image_url' => 'nullable|url|max:8192',
-            'hero_image_file' => 'nullable|image|max:8192',
+            'hero_image_file' => 'nullable|mimes:jpeg,jpg,png,gif,bmp,webp|max:8192',
             'footer_about' => 'nullable|string|max:500',
         ]);
 
@@ -209,10 +209,6 @@ class UserBlogController extends Controller
         if ($blog->user_id != auth()->id()) {
             abort(403);
         }
-        // //delete the stored image from storage
-        // if ($blog->hero_image && !str_starts_with($blog->hero_image, 'http')) {
-        //     Storage::disk('public')->delete($blog->hero_image);
-        // }
 
         //delete the blog model
         $blog->delete();
