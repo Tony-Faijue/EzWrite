@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\UserBlogController;
+use App\Livewire\SearchForm;
 use Illuminate\Support\Facades\Route;
 
 //----------Root Route----------------
