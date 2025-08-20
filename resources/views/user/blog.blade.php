@@ -40,7 +40,7 @@
                 <!-- Display All Sections for the Blog -->
                 <div class="place-self-center space-y-8">
                     @foreach ($sections as $section)
-                        <div class="justify-items-center border border-purple-500 space-y-2">
+                        <div class="justify-items-center space-y-2">
                             <h1 class="text-3xl lg:text-5xl text-center px-8">{{ $section->heading }}</h1>
                             <p class="text-lg text-center px-8">{{ $section->content }}</p>
                             @if($section->section_image)

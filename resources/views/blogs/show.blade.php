@@ -15,19 +15,15 @@
             <div>
                 <ul class="flex flex-row flex-wrap place-content-center overflow-x-auto gap-4 mt-2 mb-2">
 
-                    @forelse($blog->hero_topics ?? [] as $topic)
+                    @foreach($blog->hero_topics ?? [] as $topic)
                         <li class="bg-purple-600 text-slate-200 text-xl rounded-2xl pl-2 pr-2">{{ $topic }}</li>
-                    @empty
-                        <li>No topics are listed</li>
-                    @endforelse
+                    @endforeach
                 </ul>
             </div>
             <!-- Hero Image -->
-            @empty($blog->hero_image_src)
-                <p class="text-center text-red-600">No Image Available</p>
-            @else
+            @if($blog->hero_image_src)
                 <img class="hero-img w-full" src="{{ $blog->hero_image_src }}">
-            @endempty
+            @endif
 
             <!-- Introduction -->
             <div class="text-center  border-l-4 border-purple-700">
@@ -37,7 +33,7 @@
             <!-- Display All Sections for the Blog -->
             <div class="place-self-center space-y-8">
                 @foreach ($sections as $section)
-                    <div class="justify-items-center border border-purple-500 space-y-2">
+                    <div class="justify-items-center space-y-2">
                         <h1 class="text-3xl lg:text-5xl text-center px-8">{{ $section->heading }}</h1>
                         <p class="text-lg text-center px-8">{{ $section->content }}</p>
                         @if($section->section_image)
@@ -50,12 +46,13 @@
             <!-- Contributors/Authors -->
             <div class="justify-items-center text-lg lg:text-2xl">
                 <ul class="flex flex-row flex-nowrap overflow-x-auto gap-2 mt-2 mb-2">
-                    <p>Contributors:</p>
-                    @forelse ($blog->hero_authors ?? [] as $author)
+                    @if ($blog->hero_authors)
+                        <p>Contributors:</p>
+                    @endif
+
+                    @foreach ($blog->hero_authors ?? [] as $author)
                         <li>{{ $author }}</li>
-                    @empty
-                        <li>No other authors are listed</li>
-                    @endforelse
+                    @endforeach
                 </ul>
             </div>
 

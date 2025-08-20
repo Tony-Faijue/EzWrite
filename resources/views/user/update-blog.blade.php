@@ -170,7 +170,8 @@
                     <div class="flex flex-col gap-2">
                         <p>Select <i class="text-purple-500">Private</i> to prevent others from viewing this blog.
                             Select
-                            <i class="text-purple-500">Public</i> to allow others to view this blog.
+                            <i class="text-purple-500">Public</i> to allow others to view this blog. Must have at least
+                            one section to select <i class="text-purple-500">Public</i>.
                         </p>
                         <label for="is_public" class="text-2xl">Select Blog Status</label>
                         <select name="is_public"
@@ -178,7 +179,9 @@
                             required>
                             @php($current = old('is_public', $blog->is_public))
                             <option value="0" {{ $current == 0 ? 'selected' : '' }}>Private</option>
-                            <option value="1" {{ $current == 1 ? 'selected' : '' }}>Public</option>
+                            @if ($blog->sections()->count() > 0)
+                                <option value="1" {{ $current == 1 ? 'selected' : '' }}>Public</option>
+                            @endif
                         </select>
                     </div>
                     <!-- Footer-->
