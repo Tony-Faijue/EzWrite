@@ -8,11 +8,11 @@ The goal of this project is to create a platform for users to practice and devel
 
 ## What I Learned
 
-This project exposed me to various things that I knew of but did not fully have a grasp on such as Authentication, Routing, handling HTTP Responses & Requests, Testing, working with ORMs, Web Design concepts and Documentation. I believe this project helped me to better understand the fundamental principles that goes into planing, designing, creating, testing and recieving feedback for the project.
+This project exposed me to various things that I knew of but did not fully have a grasp on such as Authentication, Routing, handling HTTP Responses & Requests, Testing, working with ORMs, Web Design concepts and Documentation. I believe this project helped me to better understand the fundamental principles that goes into planing, designing, creating, testing and recieving feedback when it comes building web applications.
 
 ## Tech Stack
 
-**Client:** Laravel, PHP, HTML/CSS, JavaScript, TailwindCSS
+**Client:** Laravel Livewire, PHP, HTML/CSS, JavaScript, TailwindCSS
 
 **Server:** Laravel, SQLite (Switch to PostgresSQL)
 
@@ -29,6 +29,9 @@ To run tests, run the following artisan command
 ## Configurations
 
 -   PHP = 8.2.12
+-   Livewire = 3.6.4
+-   Vite = 6.2.4
+-   TailwindCSS = 4.0.0
 -   Composer = 2.8.10
 -   Node.JS = 24.6.0
 -   SQLite (dev)

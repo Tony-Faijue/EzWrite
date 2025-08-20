@@ -156,6 +156,12 @@ class UserBlogController extends Controller
             'footer_about' => 'nullable|string|max:500',
         ]);
 
+        //Check to see if blog has at least one section before making public
+        $isPublic = $validated['is_public'];
+        if ($isPublic && $blog->sections()->count() === 0) {
+            return back()->withErrors(['is_public' => 'Blog needs at least one section before it can become public'])->withInput();
+        }
+
         //Drop blank/whitespace entries of authors and topics
         //Use of the array_fileter to method filter array items with the callback function
         //Use of the null coalescing operator; $validated['hero_authors'] ?? [] ensures that array is used even if the field is null

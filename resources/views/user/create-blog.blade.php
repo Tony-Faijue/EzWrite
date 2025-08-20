@@ -147,17 +147,16 @@
 
                         <!-- Public/Private Option -->
                         <div class="flex flex-col gap-2">
-                            <p>Recommended to select <i class="text-purple-500">Private</i> when first creating a blog. Then
-                                within Blog Update Form
-                                select <i class="text-purple-500">Public</i> after the
-                                completion of the
-                                blog and sections.</p>
-                            <label for="is_public" class="text-2xl">Select Blog Status</label>
+                            <p><i class="text-purple-500">Private</i> will be selected first when creating the Blog. To make
+                                the Blog <i class="text-purple-500">Public</i> must update the blog after creating at least
+                                one section.
+                                Then you can update the Blog to <i class="text-purple-500">Public</i>
+                                status.</p>
+                            <label for="is_public" class="text-2xl">Blog Status</label>
                             <select name="is_public"
                                 class="border-2 border-purple-700 rounded-lg block w-full px-4 py-2 text-lg text-purple-500"
                                 required>
                                 <option value="0">Private</option>
-                                <option value="1">Public</option>
                             </select>
                         </div>
                         <!-- Footer-->
