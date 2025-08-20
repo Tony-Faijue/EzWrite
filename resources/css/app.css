@@ -17,7 +17,7 @@
         --font-sans:'Author', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
     }
 }
-
+/* Generic Stylings */
 .user-form-bg{
     @apply bg-white shadow-xl rounded-2xl w-full max-w-md p-6 sm:p-8;
 }
