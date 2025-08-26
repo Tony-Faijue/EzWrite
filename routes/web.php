@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\UserBlogController;
 use App\Livewire\SearchForm;
@@ -66,3 +67,5 @@ Route::middleware('auth')->group(function () {
 //----------Routes all Users can access----------------
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs-index');
 Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs-show');
+Route::get('/contact-form', [ContactController::class, 'show'])->name('contact-form-show');
+Route::post('/contacts', [ContactController::class, 'submit'])->name('contacts-create');
