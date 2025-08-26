@@ -30,7 +30,8 @@ To run tests, run the following artisan command
 
 -   PHP = 8.2.12
 -   Livewire = 3.6.4
--   Vite = 6.2.4
+-   Vite = 6.3.5
+-   Laravel = 12.19.3
 -   TailwindCSS = 4.0.0
 -   Composer = 2.8.10
 -   Node.JS = 24.6.0

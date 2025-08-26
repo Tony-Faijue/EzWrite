@@ -21,7 +21,8 @@
                 <a href="{{route('home')  }}" class="text-purple-900 px-4 py-2 hover:text-orange-400">Home</a>
                 <a href="{{ route('blogs-index') }}" class="text-purple-900 px-4 py-2 hover:text-orange-400">Blogs</a>
                 <a href="#" class="text-purple-900 px-4 py-2 hover:text-orange-400">About</a>
-                <a href="#" class="text-purple-900 px-4 py-2 hover:text-orange-400">Contact</a>
+                <a href="{{ route('contact-form-show') }}"
+                    class="text-purple-900 px-4 py-2 hover:text-orange-400">Contact</a>
                 <!-- Use of a form to handle logout function -->
                 <form id="logout-form" action="{{route('logout')}}" method="POST">
                     @csrf
