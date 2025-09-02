@@ -69,3 +69,4 @@ Route::get('/blogs', [BlogController::class, 'index'])->name('blogs-index');
 Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs-show');
 Route::get('/contact-form', [ContactController::class, 'show'])->name('contact-form-show');
 Route::post('/contacts', [ContactController::class, 'submit'])->name('contacts-create');
+Route::view('/about', 'about')->name('about');
