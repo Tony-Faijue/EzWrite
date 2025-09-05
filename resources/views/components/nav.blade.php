@@ -18,7 +18,7 @@
             <div class="lg:flex flex-col lg:flex-row lg:space-x-4 lg:mt-0 mt-4 flex items-center text-xl">
                 <a href="{{route('home')  }}" class="text-purple-900 px-4 py-2 hover:text-orange-400">Home</a>
                 <a href="{{ route('blogs-index') }}" class="text-purple-900 px-4 py-2 hover:text-orange-400">Blogs</a>
-                <a href="#" class="text-purple-900 px-4 py-2 hover:text-orange-400">About</a>
+                <a href="{{ route("about") }}" class="text-purple-900 px-4 py-2 hover:text-orange-400">About</a>
                 <a href="{{route('contact-form-show')  }}"
                     class="text-purple-900 px-4 py-2 hover:text-orange-400">Contact</a>
                 <a href="{{route('register')  }}" class="text-purple-900 px-4 py-2 hover:text-orange-400">Signup</a>
