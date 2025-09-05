@@ -5,13 +5,13 @@
             <div class="text-sm uppercase text-orange-400 font-bold">Menu</div>
             <ul>
                 <li class="my-2">
-                    <a href="" class="hover:text-orange-400">Home</a>
+                    <a href="{{ route("home") }}" class="hover:text-orange-400">Home</a>
                 </li>
                 <li class="my-2">
-                    <a href="#" class="hover:text-orange-400">Welcome</a>
+                    <a href="{{ route("welcome") }}" class="hover:text-orange-400">Welcome</a>
                 </li>
                 <li class="my-2">
-                    <a href="" class="hover:text-orange-400">About Us</a>
+                    <a href="{{ route("about") }}" class="hover:text-orange-400">About Us</a>
                 </li>
             </ul>
         </div>
