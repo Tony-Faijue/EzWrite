@@ -17,7 +17,6 @@
                         <button
                             class="p-2 bg-purple-600 border border-indigo-800 rounded-lg text-lg md:text-xl lg:text-2xl text-zinc-100 hover:bg-purple-700">Write
                             Your Story <i class="fa-solid fa-pencil ml-2"></i></button>
-
                     </div>
                 </div>
             </div>
@@ -29,7 +28,24 @@
         </div>
         <!-- Blog Section -->
         <div class="place-self-center border border-slate-500 w-[50%]">
-            <h1 class=" place-self-center">Heading</h1>
+            <h1 class="place-self-center author-medium sm:text-2xl md:text-3xl lg:text-4xl">Welcome</h1>
+        </div>
+        <div class="place-self-center grid grid-cols-1 md:grid-cols-2 gap-6 border border-amber-300">
+            <div class="text-center space-y-4">
+                <h1 class="sm:text-xl md:text-2xl lg:text-3xl">Welcome to EzWrite</h1>
+                <p class="text-base md:text-lg lg:text-xl">Welcome to EzWrite, where you can write and share your stories,
+                    giving the world your unique insight and
+                    perspective on topics that you care about. Here you can view the wonderful stories of others on any
+                    topic and get their perspectives. </p>
+            </div>
+            <div class="text-center space-y-4">
+                <h1 class="sm:text-xl md:text-2xl lg:text-3xl">Importance of Writing</h1>
+                <p class="text-base md:text-lg lg:text-xl">Writing is an essential part of modern human society. The
+                    importance of writing and its benefits cannot
+                    be stressed enough such as improve creativity, organizing thoughts, learning, dealing with emotions and
+                    effective communication. Writing helps us connect with others in expressing our thoughts and telling our
+                    stories. </p>
+            </div>
         </div>
     </div>
 @endsection
