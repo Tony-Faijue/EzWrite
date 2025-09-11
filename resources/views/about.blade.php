@@ -45,8 +45,8 @@
                                 </ul>
                             </div>
                             <div class="border border-amber-200">
-                                <img
-                                    src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                                <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    class="min-w-full min-h-full" />
                             </div>
                         </div>
                     </div>
@@ -57,8 +57,8 @@
                     <div class="flex flex-row border border-red-600">
                         <div class="border border-blue-800 grid grid-cols-1 md:grid-cols-2 w-full gap-x-8">
                             <div class="border border-amber-200">
-                                <img
-                                    src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                                <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    class="min-w-full min-h-full" />
                             </div>
                             <div class="border border-amber-200 space-y-4">
                                 <h1 class="text-center sm:text-2xl md:text-3xl lg:text-4xl text-purple-800">About Me</h1>
