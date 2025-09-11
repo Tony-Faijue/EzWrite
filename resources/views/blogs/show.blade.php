@@ -1,8 +1,8 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="flex-1 flex flex-col px-2 md:px-4">
-        <div class="flex-1 overflow-auto space-y-6 place-self-center w-full ">
+    <div class="flex flex-col px-2 md:px-4 blog-section-container">
+        <div class="flex-1 overflow-auto space-y-6 place-self-center w-full">
 
             <!-- Hero Information -->
             <div class="justify-items-center">
@@ -22,11 +22,11 @@
             </div>
             <!-- Hero Image -->
             @if($blog->hero_image_src)
-                <img class="hero-img w-full" src="{{ $blog->hero_image_src }}">
+                <img class="images w-full hero-img" src="{{ $blog->hero_image_src }}">
             @endif
 
             <!-- Introduction -->
-            <div class="text-center  border-l-4 border-purple-700">
+            <div class="text-center  border-l-4 border-purple-700 mt-8">
                 <p class="text-2xl">{{ $blog->intro }}</p>
             </div>
 
@@ -37,7 +37,7 @@
                         <h1 class="text-3xl lg:text-5xl text-center px-8">{{ $section->heading }}</h1>
                         <p class="text-lg text-center px-8">{{ $section->content }}</p>
                         @if($section->section_image)
-                            <img class="w-full aspect-4/3" src="{{ $section->section_image_src }}">
+                            <img class="w-full images" src="{{ $section->section_image_src }}">
                         @endif
                     </div>
                 @endforeach
