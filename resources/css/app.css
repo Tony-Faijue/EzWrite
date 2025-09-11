@@ -33,6 +33,9 @@
 .bg-grad-3{
     @apply min-h-screen bg-slate-700 text-white gap-2 p-4;
 }
+.bg-grad-4{
+    @apply min-h-screen bg-gradient-to-br from-cyan-100 to-purple-300 flex items-center justify-center p-4;
+}
 .heading-form-title{
     @apply text-3xl font-extrabold text-center text-zinc-800 mb-6;
 }

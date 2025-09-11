@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="bg-grad-1">
+    <div class="bg-grad-4">
         <div class="user-form-bg">
             <div class="pb-8">
                 <h1 class="heading-form-title">Contact Form</h1>
