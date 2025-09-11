@@ -27,7 +27,7 @@
                         <div class="flex justify-between text-slate-100">
                             <button type="submit"
                                 class="bg-emerald-500 rounded-lg border border-purple-800 hover:bg-emerald-700 w-25 text-center text-lg">Confirm</button>
-                            <button
+                            <button type="button"
                                 class="bg-red-600 rounded-lg border border-purple-800 hover:bg-red-800 w-25 text-center text-lg">
                                 <a href="{{route('user-blogs-index')}}">Cancel</a>
                             </button>
