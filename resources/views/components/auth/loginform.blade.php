@@ -1,4 +1,4 @@
-<div class="bg-grad-1">
+<div class="bg-grad-4">
     <div class="user-form-bg">
         <h1 class="heading-form-title">Login</h1>
         <!-- Form for user to login to -->
