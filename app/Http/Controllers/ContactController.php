@@ -13,11 +13,11 @@ class ContactController extends Controller
     {
         //Validate the Contactform data
         $validated = $request->validate([
-            'firstname' => 'required|string|max:255',
-            'lastname' => 'required|string|max:255',
-            'email' => 'required|email',
-            'subject' => 'required|string|max:50',
-            'message' => 'required|string|max:750',
+            'firstname' => 'required|string|min:1|max:255',
+            'lastname' => 'required|string|min:1|max:255',
+            'email' => 'required|email|max:254',
+            'subject' => 'required|string|min:5|max:50',
+            'message' => 'required|string|min:25|max:750',
         ]);
 
         //here would handle sending the email
