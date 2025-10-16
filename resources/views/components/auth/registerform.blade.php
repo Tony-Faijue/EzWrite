@@ -35,6 +35,12 @@
                 <input type="password" id="password" name="password" placeholder="Password" required
                     class="input-form input-form-focus" />
             </div>
+            <!--Re-Confirm Password-->
+            <div>
+                <label for="repassword" class="block label-form mb-1">Confirm Password</label>
+                <input type="password" id="repassword" name="repassword" placeholder="Password" required
+                    class="input-form input-form-focus" />
+            </div>
             <!--Submit Button-->
             <div class="flex justify-center">
                 <button class="auth-btn">Signup</button>

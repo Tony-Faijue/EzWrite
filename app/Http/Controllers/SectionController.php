@@ -49,6 +49,13 @@ class SectionController extends Controller
         }
         //dd($request->all(), $request->files->all());
 
+        //Limit the amount of blogsections that users can be created
+        //Max Sections should be 8-10
+        $maxSections = 10;
+        if ($blog->sections()->count() > $maxSections) {
+            return back()->withErrors(['error' => "The Maximum Amount of Blog Sections for a Blog is {$maxSections}"]);
+        }
+
         //Create 2 fields file and url for image to be validated
         $validated = $request->validate([
             'heading' => 'required|string|max:500',
