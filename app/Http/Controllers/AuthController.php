@@ -7,6 +7,7 @@ use Auth;
 use Exception;
 use Hash;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\Password;
 use Log;
 
 class AuthController extends Controller
@@ -33,8 +34,21 @@ class AuthController extends Controller
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
+            'password' => ['required', Password::min(8)->mixedCase()->numbers()->symbols()],
+            'repassword' => ['required', Password::min(8)->mixedCase()->numbers()->symbols()],
         ]);
+
+        //Check if password does not match the confirmed password for security
+        try {
+            if ($data['password'] != $data['repassword']) {
+                throw new Exception();
+            }
+        } catch (Exception $e) {
+            Log::error('Registration failed: ' . $e->getMessage());
+            return redirect()->route('register')
+                ->withErrors(['registration' => 'Registration failed, password does not match, please try again.'])
+                ->withInput();
+        }
 
         //Hash the password
         $data['password'] = Hash::make($data['password']);
