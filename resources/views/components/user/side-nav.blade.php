@@ -1,7 +1,8 @@
 <!--User Left Sidebar-->
 <div class="">
     <aside class="hidden md:flex flex-col justify-center w-60 h-screen sticky top-0 space-y-3 bg-grad-3">
-        <a href="#" class="flex items-center space-x-3 p-2 rounded hover:bg-teal-200 hover:text-purple-950">
+        <a href="{{ route('user-profile-edit') }}"
+            class="flex items-center space-x-3 p-2 rounded hover:bg-teal-200 hover:text-purple-950">
             <i class="fas fa-user fa-la text-purple-600"></i>
             <span>Profile</span>
         </a>

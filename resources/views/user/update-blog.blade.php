@@ -24,7 +24,7 @@
     <div class="user-form-bg mx-auto mt-10 mb-10">
         <!-- Form for user to create a blog -->
         <!-- Action calls route for the store function for user blogs   -->
-        <form action="{{ route('user-blogs-update', $blog) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('user-blogs-update', parameters: $blog) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="grid gap-4">

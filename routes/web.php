@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\UserBlogController;
 use App\Livewire\SearchForm;
@@ -33,6 +34,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     //----------User Home Route----------------
     Route::get('/user/home', fn() => view('user.homepage'))->name('user-home');
+    //----------User Profile-------------------
+    Route::get('/profile', [ProfileController::class, 'show'])->name('user-profile');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('user-profile-edit');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('user-profile-update');
+
+
+
     //----------User Blog Routes----------------
     //Group User Blog CRUD Operations Routes and Forms
     //Use of prefix function with group function to list similar uri for routes
