@@ -18,7 +18,7 @@
                 </div>
             @endif
             <div class="flex-1 overflow-auto space-y-6 place-self-center mt-10">
-                <div>
+                <div class="flex justify-center">
                     <!-- Pass the blog parameter to the section create route -->
                     <a href="{{ route('sections-create', $blog) }}">
                         <button class="create-section-btn inline-flex items-center justify-center">Create A New

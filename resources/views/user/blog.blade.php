@@ -10,7 +10,7 @@
                 <!-- Hero Information -->
                 <div class="justify-items-center">
                     <h1 class="text-5xl lg:text-7xl mt-4 mb-4 text-center">{{ $blog->hero_title }}</h1>
-                    <p class="text-lg"> written by {{ $blog->user->firstname}} {{ $blog->user->lastname}} /
+                    <p class="text-lg text-center"> written by {{ $blog->user->firstname}} {{ $blog->user->lastname}} /
                         {{ $blog->created_at }}
                     </p>
                 </div>
@@ -51,7 +51,7 @@
                 </div>
 
                 <!-- Contributors/Authors -->
-                <div class="justify-items-center text-lg lg:text-2xl">
+                <div class="flex justify-center text-lg lg:text-2xl">
                     <ul class="flex flex-row flex-nowrap overflow-x-auto gap-2 mt-2 mb-2">
                         <p>Contributors:</p>
                         @forelse ($blog->hero_authors ?? [] as $author)
@@ -63,7 +63,7 @@
                 </div>
 
                 <!-- Footer -->
-                <div class="justify-items-center mb-2">
+                <div class="flex justify-center mb-2">
                     <p class="text-lg text-justify px-8">{{ $blog->footer_about }}</p>
                 </div>
 
