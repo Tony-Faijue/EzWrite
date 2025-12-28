@@ -26,7 +26,7 @@
                         </h2>
                         <!-- UserName -->
                         <div>
-                            <label for="name" class="block label-form mb-1">Username</label>
+                            <label for="name" class="text-2xl">Username</label>
                             <input type="text" id="name" name="name" placeholder="Username"
                                 class="input-form input-form-focus" value="{{ old('name', $user->name) }}" />
                         </div>
