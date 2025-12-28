@@ -17,7 +17,8 @@
     display: block;
     margin: 0 auto;
     object-fit: contain;
-    page-break-inside:avoid;
+    /* page-break-inside:avoid; Depricated */
+    break-inside:avoid;
   }
   .blog-section-container{
     width: 100%;

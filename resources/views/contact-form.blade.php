@@ -9,19 +9,6 @@
                     class="space-y-5">
                     @csrf
 
-                    <!--FirstName-->
-                    <div>
-                        <label for=" firstname" class="block label-form mb-1">
-                            Firstname</label>
-                        <input type="text" id="firstname" name="firstname" placeholder="Firstname" required
-                            class="input-form input-form-focus" />
-                    </div>
-                    <!--LastName-->
-                    <div>
-                        <label for="lastname" class="block label-form mb-1">Lastname</label>
-                        <input type="text" id="lastname" name="lastname" placeholder="Lastname" required
-                            class="input-form input-form-focus" />
-                    </div>
                     <!--Email-->
                     <div>
                         <label for="email" class="block label-form mb-1">Email</label>
