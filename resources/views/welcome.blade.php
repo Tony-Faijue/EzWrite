@@ -16,7 +16,7 @@
                             ipsum
                             dolor sit amet consectetur adipisicing elit.
                             Quaerat consectetur illum, modi iste maxime delectus?</p>
-                        <div class="flex flex-row gap-8 md:gap-14">
+                        <div class="flex justify-center gap-8 md:gap-14">
                             <button
                                 class="p-2 border border-purple-600 bg-slate-50 rounded-lg text-lg md:text-xl lg:text-2xl text-purple-700 hover:bg-slate-200">Explore
                                 Stories <i class="fa-solid fa-book ml-2"></i></button>
@@ -33,8 +33,8 @@
                 </div>
             </div>
             <!-- Blog Section -->
-            <div class="place-self-center w-[50%]">
-                <h1 class="place-self-center author-bold sm:text-2xl md:text-3xl lg:text-4xl">
+            <div class="flex justify-center">
+                <h1 class="md:place-self-center author-bold text-2xl md:text-3xl lg:text-4xl">
                     Welcome</h1>
             </div>
             <div class="place-self-center grid grid-cols-1 md:grid-cols-2 gap-6 border border-amber-300 ">
