@@ -24,6 +24,7 @@ class UserBlogTest extends TestCase
         $blog = Blog::factory()->for($user)->create();
         BlogSection::factory()->count(3)->for($blog)->create();
 
+
         //Get the response of the user at the specified route
         $response = $this->actingAs($user)->get(route('user-blogs-show', $blog));
 
@@ -173,7 +174,7 @@ class UserBlogTest extends TestCase
         $updatedPayload = [
             'hero_title' => 'Updated Hero Title',
             'intro' => 'Updated Introduction',
-            'is_public' => true,
+            'is_public' => false,
             'hero_topics' => ['Updated Topic A', 'Updated Topic B', '  '],
             'hero_authors' => ['Alice', '', 'Charlie', ' '],
             'hero_image_url' => 'https://images.unsplash.com/photo-1566438480900-0609be27a4be',
@@ -190,7 +191,7 @@ class UserBlogTest extends TestCase
             'id' => $blog->id,
             'hero_title' => 'Updated Hero Title',
             'intro' => 'Updated Introduction',
-            'is_public' => 1,
+            'is_public' => 0,
             'hero_image' => 'https://images.unsplash.com/photo-1566438480900-0609be27a4be',
             'footer_about' => 'Updated Footer Details',
             'user_id' => $user->id,
