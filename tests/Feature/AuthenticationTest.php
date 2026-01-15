@@ -26,7 +26,8 @@ class AuthenticationTest extends TestCase
             'firstname' => 'Bob',
             'lastname' => 'Handsome',
             'email' => 'bob@example.com',
-            'password' => 'secret123',
+            'password' => 'Secret123!',
+            'repassword' => 'Secret123!'
         ];
 
         //Execute registration request/ Attempt to register
