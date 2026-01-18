@@ -57,7 +57,7 @@
                         <!-- Dynamic Authors -->
                         <!-- Allows users to add/remove multiple authors within the form  -->
                         <label class="text-2xl text-center">Authors</label>
-                        <p class="text-center text-lg">Can add up to 5 additional authors</p>
+                        <p class="text-center text-lg">Can add up to 2 additional authors</p>
 
                         <div id="authors-wrapper">
                             <!-- Use of php directives to execute php code -->
@@ -103,7 +103,7 @@
                         <!-- Dynamic Topics -->
                         <!-- Allows users to add/remove multiple topics within the form  -->
                         <label class="text-2xl text-center">Topics</label>
-                        <p class="text-center text-lg">Can add up to 10 topics</p>
+                        <p class="text-center text-lg">Can add up to 5 topics</p>
                         <div id="topics-wrapper">
                             <!-- Use of php directives to execute php code -->
                             <!-- Use of the old function to retrieve old inputs if the form fails/error occurs  -->

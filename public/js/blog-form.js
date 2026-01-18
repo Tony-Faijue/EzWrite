@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const wrapper = document.getElementById('authors-wrapper');
   const addBtn  = document.getElementById('add-author');
   const tmpl    = document.getElementById('author-row-template').content;
-  const MAX = 5;
+  const MAX = 2;
 
   
 
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const topicWrapper = document.getElementById('topics-wrapper');
   const addBtnTopic = document.getElementById('add-topic');
   const tmplTopic = document.getElementById('topic-row-template').content;
-  const MAXTOPICROW  = 10;
+  const MAXTOPICROW  = 5;
 
   function refreshAddBtnTopic(){
       const count = topicWrapper.querySelectorAll('.topic-row').length;
